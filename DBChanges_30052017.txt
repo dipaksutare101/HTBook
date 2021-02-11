@@ -1,0 +1,124 @@
+/****** Object:  StoredProcedure [dbo].[Ins_Inward]    Script Date: 05/30/2017 23:16:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Ins_Inward]
+@InwardID int,
+@PartyId int,
+@InwardDate datetime,
+@CenterId int,
+@BillNo varchar(50),
+@Remark varchar(50),
+@AmountAdd int,
+@AmountLess int,
+@Total Numeric(18,2),
+@Paid int,
+@PaidRemark varchar(50),
+@OrderNo varchar(50),
+@OrderDate datetime,
+@ChallanNo varchar(50),
+@ChallanDate datetime,
+@LRNo varchar(50),
+@LRDate datetime,
+@VatPerFour numeric(18,2),
+@VatFourAmont numeric(18,2),
+@ATaxOne numeric(18,2),
+@ATaxOneAmount numeric(18,2),
+@VatPerTwelveFive numeric(18,2),
+@VatPerTwelveFiveAmount numeric(18,2),
+@ATaxTwoFive numeric(18,2),
+@ATaxTwoFiveAmount numeric(18,2),
+@TotalAmont numeric(18,2),
+@DisFive numeric(18,2),
+@DisFiveAmount numeric(18,2),
+@NetAmont numeric(18,2),
+@CstTwoPer numeric(18,2),
+@Roundoff numeric(18,2),
+@DetailDiscount numeric(18,2),
+@isQuatation bit,
+@InvoiceType varchar(50),
+@Action AS smallint
+,@IwdDetails As ins_InwardDetails READONLY
+AS
+BEGIN
+SET NOCOUNT ON;
+
+	BEGIN TRANSACTION;
+
+	BEGIN TRY
+		
+		IF @Action = 1 
+			BEGIN
+				INSERT INTO dbo.Inward
+				(
+					PartyId, InwardDate, BillNo, Remark, AmountAdd, AmountLess, Total, Paid, PaidRemark, OrderNo,
+					OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour, VatFourAmont, ATaxOne, ATaxOneAmount, 
+					VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive, ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount,
+					NetAmont, CstTwoPer, Roundoff, DetailDiscount, isQuatation, InvoiceType
+				)
+				VALUES
+				(
+					@PartyId, @InwardDate, @BillNo, @Remark, @AmountAdd, @AmountLess, @Total, @Paid, @PaidRemark, @OrderNo,
+					@OrderDate, @ChallanNo, @ChallanDate, @LRNo, @LRDate, @VatPerFour, @VatFourAmont, @ATaxOne, @ATaxOneAmount, 
+					@VatPerTwelveFive, @VatPerTwelveFiveAmount, @ATaxTwoFive, @ATaxTwoFiveAmount, @TotalAmont, @DisFive, @DisFiveAmount,
+					@NetAmont, @CstTwoPer, @Roundoff, @DetailDiscount, @isQuatation, @InvoiceType
+				)
+				SET @InwardID = SCOPE_IDENTITY ()
+				
+				INSERT into dbo.InwardDetail
+				(
+					InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, 
+					Unit, Qty, Rate ,Dis, DisAmount, Vatper, VatAmount, Amount, CapitalAHidden  	
+				)
+				SELECT 
+					@InwardID, ItemId, CapitalA, Digital1, smalla, ItemRemark, 
+					Unit, Qty, Rate ,Dis, DisAmount, Vatper, VatAmount, Amount, CapitalAHidden
+				FROM @IwdDetails
+				
+				Select @InwardID InwardId
+
+			END
+
+		IF @Action = 2
+			BEGIN
+				UPDATE dbo.Inward SET
+					PartyId = @PartyId, InwardDate = @InwardDate,  BillNo = @BillNo, Remark = @Remark, AmountAdd = @AmountAdd, 
+					AmountLess = @AmountLess, Total = @Total, Paid = @Paid, PaidRemark = @PaidRemark, OrderNo = @OrderNo, OrderDate = @OrderDate, 
+					ChallanNo = @ChallanNo, ChallanDate = @ChallanDate, LRNo = @LRNo, LRDate = @LRDate, VatPerFour = @VatPerFour, VatFourAmont = @VatFourAmont, 
+					ATaxOne = @ATaxOne, ATaxOneAmount = @ATaxOneAmount,	VatPerTwelveFive = @VatPerTwelveFive, VatPerTwelveFiveAmount = @VatPerTwelveFiveAmount, 
+					ATaxTwoFive = @ATaxTwoFive, ATaxTwoFiveAmount = @ATaxTwoFiveAmount, TotalAmont = @TotalAmont, DisFive = @DisFive, 
+					DisFiveAmount = @DisFiveAmount, NetAmont = @NetAmont, CstTwoPer = @CstTwoPer, Roundoff = @Roundoff, 
+					DetailDiscount = @DetailDiscount, isQuatation = @isQuatation, InvoiceType = @InvoiceType
+				WHERE InwardId = @InwardID
+			
+				Delete From InwardDetail WHere InwardId = @InwardID 
+				INSERT into dbo.InwardDetail
+				(
+					InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, 
+					Unit, Qty, Rate, Amount, Vatper, VatAmount ,Dis, DisAmount, CapitalAHidden	
+				)
+				SELECT 
+					@InwardID, ItemId, CapitalA, Digital1, smalla, ItemRemark, 
+					Unit, Qty, Rate, Amount, Vatper, VatAmount ,Dis, DisAmount, CapitalAHidden
+				FROM @IwdDetails
+				
+				Select @InwardID InwardId
+				
+			END
+
+
+	END TRY
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0  
+			ROLLBACK TRANSACTION;
+	    
+		Select 0 InwardId
+	    
+	END CATCH
+
+	IF @@TRANCOUNT > 0  
+		COMMIT TRANSACTION; 
+
+
+END
