@@ -293,6 +293,7 @@ Public Class FrmInvop
             MyDataSet.Tables(1).Columns.Add("CapitalAHidden")
             MyDataSet.Tables(1).AcceptChanges()
         End If
+
         ReCalculate()
     End Sub
 
@@ -713,6 +714,7 @@ err_h:
             Else
                 If iCol < 12 Then
                     MyDataGridView1.CurrentCell = MyDataGridView1(iCol + 1, iRow)
+                    
                 Else
                     btnAddRow_Click(Nothing, Nothing)
                     MyDataGridView1.CurrentCell = MyDataGridView1(3, iRow + 1)
@@ -876,5 +878,13 @@ err_h:
     Private Sub chkPerfomaInvoice_Leave(sender As Object, e As EventArgs) Handles chkPerfomaInvoice.Leave
         MyDataGridView1.Focus()
         MyDataGridView1.CurrentCell = MyDataGridView1(3, 0)
+    End Sub
+
+    Private Sub TxtVat4Prct_TextChanged(sender As Object, e As EventArgs) Handles TxtVat4Prct.TextChanged
+
+    End Sub
+
+    Private Sub MyDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MyDataGridView1.CellContentClick
+
     End Sub
 End Class
