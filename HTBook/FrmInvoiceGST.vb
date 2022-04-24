@@ -92,11 +92,15 @@ Public Class FrmInvoiceGST
             End With
         End If
 
-        If MyDataGridView1.Columns(e.ColumnIndex).Name = ColQty.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = ColRate.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = ColDis.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = ColVatper.Name Then
+        If MyDataGridView1.Columns(e.ColumnIndex).Name = ColQty.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = ColRate.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = ColDis.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = ColVatper.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = iRate.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = iVatper.Name Or MyDataGridView1.Columns(e.ColumnIndex).Name = iDis.Name Then
             With MyDataGridView1.Rows(e.RowIndex)
                 .Cells(ColAmount.Name).Value = Math.Round(Val(.Cells(ColQty.Name).Value.ToString()) * Val(.Cells(ColRate.Name).Value.ToString()), 2)
                 .Cells(ColDisAmount.Name).Value = Math.Round((((Val(.Cells(ColQty.Name).Value.ToString()) * Val(.Cells(ColRate.Name).Value.ToString())) * Val(.Cells(ColDis.Name).Value.ToString())) / 100), 2)
                 .Cells(ColVatAmount.Name).Value = Math.Round(((((Val(.Cells(ColQty.Name).Value.ToString()) * Val(.Cells(ColRate.Name).Value.ToString())) - Val(.Cells(ColDisAmount.Name).Value.ToString())) * Val(.Cells(ColVatper.Name).Value.ToString())) / 100), 2)
+                .Cells(iAmount.Name).Value = Math.Round(Val(.Cells(ColQty.Name).Value.ToString()) * Val(.Cells(iRate.Name).Value.ToString()), 2)
+                .Cells(iDisAmount.Name).Value = Math.Round((((Val(.Cells(ColQty.Name).Value.ToString()) * Val(.Cells(iRate.Name).Value.ToString())) * Val(.Cells(iDis.Name).Value.ToString())) / 100), 2)
+                .Cells(iVatAmount.Name).Value = Math.Round(((((Val(.Cells(ColQty.Name).Value.ToString()) * Val(.Cells(iRate.Name).Value.ToString())) - Val(.Cells(iDisAmount.Name).Value.ToString())) * Val(.Cells(iVatper.Name).Value.ToString())) / 100), 2)
+
             End With
         End If
 
@@ -436,7 +440,7 @@ err_h:
     End Sub
 
     Private Sub cmbPartyName_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmbPartyName.SelectionChangeCommitted
-        txtAddress.Text = Kailash.GetValue("Select Address From PartyMaster Where PartyId= " & Val(cmbPartyName.SelectedValue))
+        address.Text = Kailash.GetValue("Select Address From PartyMaster Where PartyId= " & Val(cmbPartyName.SelectedValue))
         'cmbStateName.Focus()
     End Sub
 
@@ -570,7 +574,7 @@ err_h:
             Dim iCol = MyDataGridView1.CurrentCell.ColumnIndex
             Dim iRow = MyDataGridView1.CurrentCell.RowIndex
 
-            If MyDataGridView1.CurrentCell.OwningColumn.Name = ColAmount.Name Then
+            If MyDataGridView1.CurrentCell.OwningColumn.Name = iAmount.Name Then
                 If MyDataGridView1.Rows.Count - 1 = iRow Then
                     btnAddNewRow_Click(Nothing, Nothing)
                     MyDataGridView1.CurrentCell = MyDataGridView1(3, iRow + 1)

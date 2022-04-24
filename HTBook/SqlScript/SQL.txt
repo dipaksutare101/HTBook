@@ -1,0 +1,59 @@
+﻿23-04-2022 Script
+
+----------------------------------
+Alter table InwardDetail
+Add iRate money NULL
+
+
+Alter table InwardDetail
+Add iAmount money NULL
+
+
+Alter table InwardDetail
+Add iVatper money NULL
+
+Alter table InwardDetail
+Add iVatAmount money NULL
+
+Alter table InwardDetail
+Add iDisAmount money NULL
+
+-------------------------------------
+USE [ParekhDb]
+GO
+/****** Object:  StoredProcedure [dbo].[LIst_InwardDetails]    Script Date: 23/4/2022 6:38:27 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[LIst_InwardDetails]
+	@InwardId as int
+
+AS
+BEGIN
+SET NOCOUNT ON;
+
+	SELECT
+
+		InwardId, PartyId, InwardDate, CenterId, BillNo, Remark, AmountAdd, AmountLess, Total,
+		Paid, PaidRemark, OrderNo, OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour,
+		VatFourAmont, ATaxOne, ATaxOneAmount, VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive,
+		ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount, NetAmont, CstTwoPer, Roundoff, DetailDiscount,
+		isQuatation, InvoiceType,		
+		GSTNo,	
+		SGST5, SGST12, SGST18, SGST28,	
+		CGST5, CGST12, CGST18, CGST28,	
+		IGST5, IGST12, IGST18, IGST28, StateCode
+
+	FROM dbo.inward
+	WHERE InwardId = @InwardId 
+
+	SELECT 
+	
+		InwardDetailId, InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, Unit, Qty, Rate,
+		Dis, DisAmount, Isnull(Vatper,0) As VatPer, VatAmount, Amount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden
+
+	FROM InwardDetail 
+	WHERE InwardId = @InwardId 
+
+END
