@@ -37,6 +37,7 @@ Public Class FrmInvoiceGST
 
     Public Sub ClearField()
         txtQNo.Text = ""
+        txtLHSNCode.Text = ""
         txtOrderNo.Text = ""
         txtChallanNo.Text = ""
         txtLrRrNo.Text = ""
@@ -142,10 +143,25 @@ Public Class FrmInvoiceGST
                 dr("ItemRemark") = dr("ItemRemark").ToString.Trim()
             End If
 
+            If dr("iVatper").ToString() IsNot Nothing And Not dr("iVatper").ToString().Equals("") Then
+                If Convert.ToDecimal(dr("iVatper").ToString()) = 5 Then
+                    GST5 = GST5 + Val(dr("iVatAmount").ToString())
+                ElseIf Convert.ToDecimal(dr("iVatper").ToString()) = 12 Then
+                    GST12 = GST12 + Val(dr("iVatAmount").ToString())
+                ElseIf Convert.ToDecimal(dr("iVatper").ToString()) = 18 Then
+                    GST18 = GST18 + Val(dr("iVatAmount").ToString())
+                ElseIf Convert.ToDecimal(dr("iVatper").ToString()) = 28 Then
+                    GST28 = GST28 + Val(dr("iVatAmount").ToString())
+                End If
+            End If
+
             If dr("Dis").ToString() IsNot Nothing Then
                 Discont = Discont + Val(dr("DisAmount").ToString())
             End If
-            GAmount = GAmount + Val(dr("Amount").ToString())
+            If dr("iDis").ToString() IsNot Nothing Then
+                Discont = Discont + Val(dr("iDisAmount").ToString())
+            End If
+            GAmount = GAmount + Val(dr("Amount").ToString()) + Val(dr("iAmount").ToString())
         Next
         txtGAmt.Text = GAmount.ToString("#0.00")
 
@@ -440,7 +456,7 @@ err_h:
     End Sub
 
     Private Sub cmbPartyName_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmbPartyName.SelectionChangeCommitted
-        address.Text = Kailash.GetValue("Select Address From PartyMaster Where PartyId= " & Val(cmbPartyName.SelectedValue))
+        txtAddress.Text = Kailash.GetValue("Select Address From PartyMaster Where PartyId= " & Val(cmbPartyName.SelectedValue))
         'cmbStateName.Focus()
     End Sub
 
@@ -474,6 +490,7 @@ err_h:
                     EntryId = Val(.Item("InwardId"))
                     InwardId = EntryId
                     txtQNo.Text = .Item("BillNo").ToString()
+                    txtLHSNCode.Text = .Item("LHSNCode").ToString()
                     If .Item("InwardDate").ToString() <> String.Empty Then dtpQDate.Text = String.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(.Item("InwardDate").ToString()))
                     txtOrderNo.Text = .Item("OrderNo").ToString()
                     cmbPartyName.SelectedValue = .Item("PartyId").ToString()
@@ -768,6 +785,7 @@ err_h:
 
             Kailash.AddParameter("@CenterId", Val(0))
             Kailash.AddParameter("@BillNo", txtQNo.Text)
+            Kailash.AddParameter("@LHSNCode", txtLHSNCode.Text)
             Kailash.AddParameter("@Remark", txtRemark.Text)
             Kailash.AddParameter("@AmountAdd", Val(0))
             Kailash.AddParameter("@AmountLess", Val(0))

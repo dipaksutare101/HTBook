@@ -141,6 +141,8 @@ Partial Class FrmInvoiceGST
         Me.txtGAmt = New HTBook.MyTextBox(Me.components)
         Me.txtSGST5 = New HTBook.MyTextBox(Me.components)
         Me.txtSGST12 = New HTBook.MyTextBox(Me.components)
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtLHSNCode = New HTBook.MyTextBox(Me.components)
         Me.pnlFooterButton.SuspendLayout()
         Me.pnlDetails.SuspendLayout()
         Me.pnlHeader.SuspendLayout()
@@ -387,6 +389,8 @@ Partial Class FrmInvoiceGST
         '
         'pnlHeader
         '
+        Me.pnlHeader.Controls.Add(Me.Label12)
+        Me.pnlHeader.Controls.Add(Me.txtLHSNCode)
         Me.pnlHeader.Controls.Add(Me.chkPerformaInvoice)
         Me.pnlHeader.Controls.Add(Me.cmbInvType)
         Me.pnlHeader.Controls.Add(Me.dtpQDate)
@@ -1294,6 +1298,25 @@ Partial Class FrmInvoiceGST
         Me.txtSGST12.TabStop = False
         Me.txtSGST12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(567, 100)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(80, 16)
+        Me.Label12.TabIndex = 82
+        Me.Label12.Text = "L.HSNCode"
+        '
+        'txtLHSNCode
+        '
+        Me.txtLHSNCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLHSNCode.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLHSNCode.Location = New System.Drawing.Point(676, 98)
+        Me.txtLHSNCode.Name = "txtLHSNCode"
+        Me.txtLHSNCode.Size = New System.Drawing.Size(172, 23)
+        Me.txtLHSNCode.TabIndex = 81
+        '
         'FrmInvoiceGST
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -1428,4 +1451,6 @@ Partial Class FrmInvoiceGST
     Friend WithEvents iVatper As DataGridViewTextBoxColumn
     Friend WithEvents iVatAmount As DataGridViewTextBoxColumn
     Friend WithEvents iAmount As DataGridViewTextBoxColumn
+    Friend WithEvents Label12 As Label
+    Friend WithEvents txtLHSNCode As MyTextBox
 End Class

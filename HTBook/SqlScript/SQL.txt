@@ -21,7 +21,7 @@ Add iDisAmount money NULL
 -------------------------------------
 USE [ParekhDb]
 GO
-/****** Object:  StoredProcedure [dbo].[LIst_InwardDetails]    Script Date: 23/4/2022 6:38:27 PM ******/
+/****** Object:  StoredProcedure [dbo].[LIst_InwardDetails]    Script Date: 30/4/2022 3:20:35 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -35,7 +35,7 @@ SET NOCOUNT ON;
 
 	SELECT
 
-		InwardId, PartyId, InwardDate, CenterId, BillNo, Remark, AmountAdd, AmountLess, Total,
+		InwardId, PartyId, InwardDate, CenterId, BillNo,LHSNCode, Remark, AmountAdd, AmountLess, Total,
 		Paid, PaidRemark, OrderNo, OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour,
 		VatFourAmont, ATaxOne, ATaxOneAmount, VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive,
 		ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount, NetAmont, CstTwoPer, Roundoff, DetailDiscount,
@@ -57,3 +57,343 @@ SET NOCOUNT ON;
 	WHERE InwardId = @InwardId 
 
 END
+
+
+
+------------------------------------------------------------
+USE [ParekhDb]
+GO
+/****** Object:  StoredProcedure [dbo].[CopyRecords]    Script Date: 30/4/2022 3:03:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[CopyRecords]
+	-- Add the parameters for the stored procedure here
+	@Id int,
+	@Copytype Nvarchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	Declare @maxid int
+    -- Insert statements for procedure here
+    
+    if @Copytype='Q2I'
+    BEGIN
+		Insert into Inward(PartyId, CenterId, BillNo,LHSNCode, InwardDate, Remark, AmountAdd, AmountLess, Total, Paid, PaidRemark, OrderNo, OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour, VatFourAmont, 
+                      ATaxOne, ATaxOneAmount, VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive, ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount, NetAmont, CstTwoPer, Roundoff, isQuatation, 
+                      DetailDiscount, InvoiceType,
+                      GSTNo, SGST5, SGST12, SGST18, SGST28,	CGST5, CGST12, CGST18, CGST28, IGST5, IGST12, IGST18, IGST28, StateCode) 
+			   select PartyId, CenterId, 'Q',LHSNCode, InwardDate, Remark, AmountAdd, AmountLess, Total, Paid, PaidRemark, OrderNo, OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour, VatFourAmont, 
+                      ATaxOne, ATaxOneAmount, VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive, ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount, NetAmont, CstTwoPer, Roundoff, 0, 
+                      DetailDiscount, InvoiceType, 
+					  GSTNo, SGST5, SGST12, SGST18, SGST28,	CGST5, CGST12, CGST18, CGST28, IGST5, IGST12, IGST18, IGST28, StateCode  
+               from	  Inward 
+               where  InwardId=@Id
+                
+                      
+		select @maxid=MAX(InwardId) from Inward                 
+
+		Insert into  InwardDetail( InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, Unit, Qty, Rate, Amount, Vatper, VatAmount, Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount,  CapitalAHidden) 
+		select @maxid, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, Unit, Qty, Rate, Amount, Vatper, VatAmount, Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount,  CapitalAHidden from InwardDetail where InwardId=@Id
+	END
+	else
+	BEGIN
+		Insert into Inward(PartyId, CenterId, BillNo,LHSNCode, InwardDate, Remark, AmountAdd, AmountLess, Total, Paid, PaidRemark, OrderNo, OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour, VatFourAmont, 
+                      ATaxOne, ATaxOneAmount, VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive, ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount, NetAmont, CstTwoPer, Roundoff, isQuatation, 
+                      DetailDiscount, InvoiceType,
+                      GSTNo, SGST5, SGST12, SGST18, SGST28,	CGST5, CGST12, CGST18, CGST28, IGST5, IGST12, IGST18, IGST28, StateCode)
+                       
+               select PartyId, CenterId, BillNo,LHSNCode, InwardDate, Remark, AmountAdd, AmountLess, Total, Paid, PaidRemark, OrderNo, OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour, VatFourAmont, 
+                      ATaxOne, ATaxOneAmount, VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive, ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount, NetAmont, CstTwoPer, Roundoff, isQuatation, 
+                      DetailDiscount, InvoiceType ,
+					  GSTNo, SGST5, SGST12, SGST18, SGST28,	CGST5, CGST12, CGST18, CGST28, IGST5, IGST12, IGST18, IGST28, StateCode
+               from   Inward 
+               where  InwardId=@Id
+                
+                      
+		select @maxid=MAX(InwardId) from Inward                 
+
+		Insert into  InwardDetail( InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, Unit, Qty, Rate, Amount, Vatper, VatAmount, Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount,  CapitalAHidden) 
+		select @maxid, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, Unit, Qty, Rate, Amount, Vatper, VatAmount, Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount,  CapitalAHidden from InwardDetail where InwardId=@Id
+	END
+	
+	
+	
+							 
+	 
+END
+
+
+---------------------------------------------------
+ 
+GO
+/****** Object:  StoredProcedure [dbo].[Ins_Inward]    Script Date: 30/4/2022 3:22:15 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Ins_Inward]
+@InwardID int,
+@PartyId int,
+@InwardDate datetime,
+@CenterId int,
+@BillNo varchar(50),
+@LHSNCode nvarchar(MAX),
+@Remark nvarchar(MAX),
+@AmountAdd int,
+@AmountLess int,
+@Total Numeric(18,2),
+@Paid int,
+@PaidRemark nvarchar(MAX),
+@OrderNo varchar(50),
+@OrderDate datetime,
+@ChallanNo nvarchar(max),
+@ChallanDate datetime,
+@LRNo varchar(50),
+@LRDate datetime,
+@VatPerFour numeric(18,2),
+@VatFourAmont numeric(18,2),
+@ATaxOne numeric(18,2),
+@ATaxOneAmount numeric(18,2),
+@VatPerTwelveFive numeric(18,2),
+@VatPerTwelveFiveAmount numeric(18,2),
+@ATaxTwoFive numeric(18,2),
+@ATaxTwoFiveAmount numeric(18,2),
+@TotalAmont numeric(18,2),
+@DisFive numeric(18,2),
+@DisFiveAmount numeric(18,2),
+@NetAmont numeric(18,2),
+@CstTwoPer numeric(18,2),
+@CstTwoPerAmount numeric(18,2),
+@Roundoff numeric(18,2),
+@DetailDiscount numeric(18,2),
+@isQuatation bit,
+@InvoiceType varchar(50),
+@Action AS smallint,
+@GSTNo varchar(50), 
+@SGST5 numeric(18,2), 
+@SGST12 numeric(18,2), 
+@SGST18 numeric(18,2), 
+@SGST28 numeric(18,2),	
+@CGST5 numeric(18,2), 
+@CGST12 numeric(18,2), 
+@CGST18 numeric(18,2), 
+@CGST28 numeric(18,2), 
+@IGST5 numeric(18,2), 
+@IGST12 numeric(18,2), 
+@IGST18 numeric(18,2), 
+@IGST28 numeric(18,2),
+@StateCode int
+,@IwdDetails As ins_InwardDetails READONLY
+AS
+BEGIN
+SET NOCOUNT ON;
+
+	BEGIN TRANSACTION;
+
+	BEGIN TRY
+		
+		IF @Action = 1 
+			BEGIN
+				INSERT INTO dbo.Inward
+				(
+					PartyId, InwardDate, BillNo,LHSNCode, Remark, AmountAdd, AmountLess, Total, Paid, PaidRemark, OrderNo,
+					OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour, VatFourAmont, ATaxOne, ATaxOneAmount, 
+					VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive, ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount,
+					NetAmont, CstTwoPer, CstTwoPerAmount, Roundoff, DetailDiscount, isQuatation, InvoiceType,
+					GSTNo, SGST5, SGST12, SGST18, SGST28,	CGST5, CGST12, CGST18, CGST28, IGST5, IGST12, IGST18, IGST28, StateCode
+				)
+				VALUES
+				(
+					@PartyId, @InwardDate, @BillNo,@LHSNCode, @Remark, @AmountAdd, @AmountLess, @Total, @Paid, @PaidRemark, @OrderNo,
+					@OrderDate, @ChallanNo, @ChallanDate, @LRNo, @LRDate, @VatPerFour, @VatFourAmont, @ATaxOne, @ATaxOneAmount, 
+					@VatPerTwelveFive, @VatPerTwelveFiveAmount, @ATaxTwoFive, @ATaxTwoFiveAmount, @TotalAmont, @DisFive, @DisFiveAmount,
+					@NetAmont, @CstTwoPer, @CstTwoPerAmount, @Roundoff, @DetailDiscount, @isQuatation, @InvoiceType,
+					@GSTNo, @SGST5, @SGST12, @SGST18, @SGST28,	@CGST5, @CGST12, @CGST18, @CGST28, @IGST5, @IGST12, @IGST18, @IGST28, @StateCode
+				)
+				SET @InwardID = SCOPE_IDENTITY ()
+				
+				INSERT into dbo.InwardDetail
+				(
+					InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate ,Dis, DisAmount, Vatper, VatAmount, Amount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden  	
+				)
+				SELECT 
+					@InwardID, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate ,Dis, DisAmount, Vatper, VatAmount, Amount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden
+				FROM @IwdDetails
+				
+				Select @InwardID InwardId
+
+			END
+
+		IF @Action = 2
+			BEGIN
+				UPDATE dbo.Inward SET
+					PartyId = @PartyId, InwardDate = @InwardDate,  BillNo = @BillNo,LHSNCode=@LHSNCode, Remark = @Remark, AmountAdd = @AmountAdd, 
+					AmountLess = @AmountLess, Total = @Total, Paid = @Paid, PaidRemark = @PaidRemark, OrderNo = @OrderNo, OrderDate = @OrderDate, 
+					ChallanNo = @ChallanNo, ChallanDate = @ChallanDate, LRNo = @LRNo, LRDate = @LRDate, VatPerFour = @VatPerFour, VatFourAmont = @VatFourAmont, 
+					ATaxOne = @ATaxOne, ATaxOneAmount = @ATaxOneAmount,	VatPerTwelveFive = @VatPerTwelveFive, VatPerTwelveFiveAmount = @VatPerTwelveFiveAmount, 
+					ATaxTwoFive = @ATaxTwoFive, ATaxTwoFiveAmount = @ATaxTwoFiveAmount, TotalAmont = @TotalAmont, DisFive = @DisFive, 
+					DisFiveAmount = @DisFiveAmount, NetAmont = @NetAmont, CstTwoPer = @CstTwoPer, CstTwoPerAmount = @CstTwoPerAmount, Roundoff = @Roundoff, 
+					DetailDiscount = @DetailDiscount, isQuatation = @isQuatation, InvoiceType = @InvoiceType,
+					GSTNo = @GSTNo, SGST5 = @SGST5, SGST12 = @SGST12, SGST18 = @SGST18, SGST28 = @SGST28,
+					CGST5 = @CGST5, CGST12 = @CGST12, CGST18 = @CGST18, CGST28 = @CGST28, 
+					IGST5 = @IGST5, IGST12 = @IGST12, IGST18 = @IGST18, IGST28 = @IGST28,
+					StateCode = @StateCode
+				WHERE InwardId = @InwardID
+			
+				Delete From InwardDetail WHere InwardId = @InwardID 
+				INSERT into dbo.InwardDetail
+				(
+					InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate, Amount, Vatper, VatAmount ,Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden	
+				)
+				SELECT 
+					@InwardID, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate, Amount, Vatper, VatAmount ,Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden
+				FROM @IwdDetails
+				
+				Select @InwardID InwardId
+				
+			END
+
+
+	END TRY
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0  
+			ROLLBACK TRANSACTION;
+	    
+		Select 0 InwardId
+	    
+	END CATCH
+
+	IF @@TRANCOUNT > 0  
+		COMMIT TRANSACTION; 
+
+
+END
+
+------------------------
+
+CREATE TYPE [dbo].[ins_InwardDetails] AS TABLE(
+	[InwardDetailId] [int] NULL,
+	[InwardId] [int] NULL,
+	[ItemId] [int] NULL,
+	[CapitalA] [nvarchar](5) NULL,
+	[Digital1] [int] NULL,
+	[smalla] [nvarchar](50) NULL,
+	[ItemRemark] [nvarchar](max) NULL,
+	[HSNCode] [nvarchar](max) NULL,
+	[Unit] [nvarchar](50) NULL,
+	[Qty] [money] NULL,
+	[Rate] [money] NULL,
+	[Dis] [money] NULL,
+	[DisAmount] [money] NULL,
+	[Vatper] [money] NULL,
+	[VatAmount] [money] NULL,
+	[Amount] [money] NULL,
+	[iRate] [money] NULL,	
+	[iDisAmount] [money] NULL,
+	[iDis] [money] NULL,
+	[iVatper] [money] NULL,
+	[iVatAmount] [money] NULL,
+	[iAmount] [money] NULL,
+	[CapitalAHidden] [nvarchar](5) NULL
+)
+GO
+
+
+------------------------------------
+
+USE [ParekhDb]
+GO
+/****** Object:  StoredProcedure [dbo].[View_Inward]    Script Date: 30/4/2022 3:02:40 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--View_Inward 1,0,False,'28-Apr-2017','06-May-2017',0
+ALTER PRocedure [dbo].[View_Inward]  
+ @MyOPt as int=1,  
+ @InwardId as int=0,  
+ @IsQuatation as bit=0
+ ,@FromDate DateTime='16-Apr-2017'
+ ,@ToDate DateTime='09-May-2017'
+ ,@PartyName Int=0
+   
+AS   
+BEGIN  
+	SET NOCOUNT ON;  
+	
+	Declare @FDate Varchar(15), @TDate Varchar(15)
+	Select  @FromDate = ISNULL(NULLIF(@FromDate,''),'')
+	Select  @ToDate = ISNULL(NULLIF(@ToDate,''),'')
+
+	IF (ISNULL(NULLIF(@ToDate,''),'') <> '')
+		BEGIN
+			Select  @ToDate = @ToDate + 1 
+		END
+		
+	
+	Select  @FDate = Case When IsNull(@FromDate,'') = '' Then '' Else Replace(Convert(Varchar,@FromDate,106),' ','-') End
+	Select  @TDate = Case When IsNull(@ToDate,'') = '' Then '' Else Replace(Convert(Varchar,@ToDate,106),' ','-') End
+	
+	--Select  @FromDate,@FDate, @ToDate,@TDate	
+	--Select  @FromDate = Convert(DateTime,@FDate), @ToDate = Convert(DateTime,@TDate)
+	--Select  @FromDate,@FDate, @ToDate,@TDate
+
+	IF @MyOPt = 1
+	
+		BEGIN
+			 Select InwardId, BillNo As InvoiceNo, InvoiceType,InwardDate AS InvoiceDate,PartyName,  
+					VatFourAmont AS Vat4, ATaxOneAmount As ATax1, VatPerTwelveFiveAmount As Vat125,  
+					ATaxTwoFiveAmount AS ATax25, DetailDiscount as TaxDisCount,  
+					DisFive as LaboutPer, DisFiveAmount as LabourDiscount, Convert(Decimal(16,0),NetAmont) As Amount, Remark  
+			 From	Inward  
+					left join PartyMaster on Inward .PartyId = PartyMaster.PartyId    
+			 WHERE	InwardId != 0 
+					AND isQuatation = @IsQuatation
+					And ( Inward.PartyId = @PartyName Or IsNull(@PartyName,0) = 0 )
+					--And InwardDate Between @FDate And @TDate
+					And   (IsNull(@FDate,'') = '' Or InwardDate >= Convert(Varchar,@FDate,106)) 
+					And   (IsNull(@TDate,'') = '' Or InwardDate <= Convert(Varchar,@TDate,106))
+			Order By InwardDate Desc,RIGHT(BillNo, 3) Desc--InwardId Desc
+			--Order By InwardId Desc	 	
+					  
+		 END  
+		 
+	ELSE IF @MyOPt = 2	
+	
+		BEGIN  
+			Select	Inward.*, PartyMaster .PartyName  
+			From	Inward  
+					Left join PartyMaster on Inward .PartyId = PartyMaster.PartyId    
+			WHERE	(InwardId = @InwardId Or IsNull(@InwardId,0) = 0 )
+					AND isQuatation = @IsQuatation 
+					And   (IsNull(@FDate,'') = '' Or InwardDate >= Convert(Varchar,@FDate,106)) 
+					And   (IsNull(@TDate,'') = '' Or InwardDate <= Convert(Varchar,@TDate,106))	
+					--And InwardDate Between @FDate And @TDate 
+					And ( Inward.PartyId = @PartyName Or IsNull(@PartyName,0) = 0 )
+			Order By InwardDate Desc,RIGHT(BillNo, 3) Desc--InwardId Desc
+			--Order By InwardId Desc
+	  
+			SELECT  InwardDetailId, InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, Unit, Qty, Rate,  
+					Dis, DisAmount, Isnull(Vatper,0) As VatPer, VatAmount, Amount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden
+			FROM	InwardDetail   
+			WHERE	InwardId = @InwardId --(InwardId = @InwardId Or IsNull(@InwardId,0) = 0 )	
+			Order By InwardId Desc				
+			
+		END 
+				 
+END   
+  
