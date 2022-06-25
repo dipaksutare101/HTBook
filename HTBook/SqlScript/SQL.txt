@@ -18,6 +18,14 @@ Add iVatAmount money NULL
 Alter table InwardDetail
 Add iDisAmount money NULL
 
+Alter table InwardDetail
+Add iDis money NULL
+
+Alter table Inward
+Add LHSNCode money NULL
+
+
+
 -------------------------------------
 USE [ParekhDb]
 GO
