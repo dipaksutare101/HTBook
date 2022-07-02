@@ -1,5 +1,10 @@
 ﻿23-04-2022 Script
 
+BANK: INDUSIND BANK LTD
+BRANCH: RING ROAD,SURAT.
+A/C NO:201001213110
+IFSC:INDB0000023
+
 ----------------------------------
 Alter table InwardDetail
 Add iRate money NULL

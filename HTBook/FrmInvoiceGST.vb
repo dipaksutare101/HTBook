@@ -302,7 +302,11 @@ err_h:
 
         'Dim SqlString As String = "SELECT " + IIf(IsLabour.Equals(False), "IsNull(Terms,'')", "IsNull(LabourTerms,'')") + " FROM dbo.PartyMaster Where PartyId = " & Val(cmbPartyName.SelectedValue)
         'TermsConditions = Kailash.ExecuteScalar(SqlString)
-
+        If cmbInvType.Text.Contains("LABOUR") Then
+            IsLabour = True
+        Else
+            IsLabour = False
+        End If
         Dim SqlString As String = "SELECT Top 1 " + IIf(IsLabour.Equals(False), "Terms", "LabourTerms") + " FROM dbo.PartyTermsCondition Where PartyId = " & Val(cmbPartyName.SelectedValue) & " Order By ModifiedDate Desc"
         If InwardId > 0 Then
             SqlString = "SELECT Top 1 " + IIf(IsLabour.Equals(False), "Terms", "LabourTerms") + " FROM dbo.PartyTermsCondition Where PartyId = " & Val(cmbPartyName.SelectedValue) & " And InwardId = " & InwardId
