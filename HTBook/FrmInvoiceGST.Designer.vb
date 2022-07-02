@@ -48,48 +48,6 @@ Partial Class FrmInvoiceGST
         Me.Label13 = New System.Windows.Forms.Label()
         Me.chkCopyEntry = New System.Windows.Forms.CheckBox()
         Me.pnlDetails = New System.Windows.Forms.Panel()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.dtpLrRrDate = New System.Windows.Forms.MaskedTextBox()
-        Me.dtpChallanDate = New System.Windows.Forms.MaskedTextBox()
-        Me.dtpOrderDate = New System.Windows.Forms.MaskedTextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.cmbPartyName = New System.Windows.Forms.ComboBox()
-        Me.chkPerformaInvoice = New System.Windows.Forms.CheckBox()
-        Me.cmbInvType = New System.Windows.Forms.ComboBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.pnlHeader = New System.Windows.Forms.Panel()
-        Me.dtpQDate = New System.Windows.Forms.MaskedTextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.cmbStateName = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblQNoCopy = New System.Windows.Forms.Label()
-        Me.txtAddress = New System.Windows.Forms.RichTextBox()
-        Me.lblQNo = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnCopy = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnAddNewRow = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.pnlBottomLeft = New System.Windows.Forms.Panel()
-        Me.btnTerms = New System.Windows.Forms.Button()
-        Me.pnlBottomRight = New System.Windows.Forms.Panel()
-        Me.lblLabourDisPer = New System.Windows.Forms.Label()
-        Me.lbllabourDisAmt = New System.Windows.Forms.Label()
-        Me.pnlFooter = New System.Windows.Forms.Panel()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.MyDataGridView1 = New HTBook.MyDataGridView(Me.components)
         Me.ColInwardDetailId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColInwardId = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -114,13 +72,60 @@ Partial Class FrmInvoiceGST
         Me.iVatper = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.iVatAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.iAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.dtpLrRrDate = New System.Windows.Forms.MaskedTextBox()
+        Me.dtpChallanDate = New System.Windows.Forms.MaskedTextBox()
+        Me.dtpOrderDate = New System.Windows.Forms.MaskedTextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cmbPartyName = New System.Windows.Forms.ComboBox()
+        Me.chkPerformaInvoice = New System.Windows.Forms.CheckBox()
+        Me.cmbInvType = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.pnlHeader = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtLHSNCode = New HTBook.MyTextBox(Me.components)
+        Me.dtpQDate = New System.Windows.Forms.MaskedTextBox()
         Me.txtParticular = New HTBook.MyTextBox(Me.components)
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.cmbStateName = New System.Windows.Forms.ComboBox()
         Me.txtGSTNo = New HTBook.MyTextBox(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblQNoCopy = New System.Windows.Forms.Label()
+        Me.txtAddress = New System.Windows.Forms.RichTextBox()
+        Me.lblQNo = New System.Windows.Forms.Label()
         Me.txtQNoCopy = New HTBook.MyTextBox(Me.components)
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnCopy = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnAddNewRow = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtLrRrNo = New HTBook.MyTextBox(Me.components)
         Me.txtQNo = New HTBook.MyTextBox(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtOrderNo = New HTBook.MyTextBox(Me.components)
         Me.txtChallanNo = New HTBook.MyTextBox(Me.components)
+        Me.pnlBottomLeft = New System.Windows.Forms.Panel()
+        Me.btnTerms = New System.Windows.Forms.Button()
+        Me.txtRemark = New HTBook.MyTextBox(Me.components)
+        Me.pnlBottomRight = New System.Windows.Forms.Panel()
+        Me.txtLabourDisPer = New HTBook.MyTextBox(Me.components)
+        Me.txtlabourDisAmt = New HTBook.MyTextBox(Me.components)
+        Me.lblLabourDisPer = New System.Windows.Forms.Label()
+        Me.lbllabourDisAmt = New System.Windows.Forms.Label()
+        Me.pnlFooter = New System.Windows.Forms.Panel()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.txtIGST5 = New HTBook.MyTextBox(Me.components)
         Me.txtIGST12 = New HTBook.MyTextBox(Me.components)
         Me.txtCGST5 = New HTBook.MyTextBox(Me.components)
@@ -131,9 +136,6 @@ Partial Class FrmInvoiceGST
         Me.txtCGST28 = New HTBook.MyTextBox(Me.components)
         Me.txtSGST18 = New HTBook.MyTextBox(Me.components)
         Me.txtSGST28 = New HTBook.MyTextBox(Me.components)
-        Me.txtLabourDisPer = New HTBook.MyTextBox(Me.components)
-        Me.txtlabourDisAmt = New HTBook.MyTextBox(Me.components)
-        Me.txtRemark = New HTBook.MyTextBox(Me.components)
         Me.txtNetAmt = New HTBook.MyTextBox(Me.components)
         Me.txtDiscountAmt = New HTBook.MyTextBox(Me.components)
         Me.txtTotalAmt = New HTBook.MyTextBox(Me.components)
@@ -141,15 +143,13 @@ Partial Class FrmInvoiceGST
         Me.txtGAmt = New HTBook.MyTextBox(Me.components)
         Me.txtSGST5 = New HTBook.MyTextBox(Me.components)
         Me.txtSGST12 = New HTBook.MyTextBox(Me.components)
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtLHSNCode = New HTBook.MyTextBox(Me.components)
         Me.pnlFooterButton.SuspendLayout()
         Me.pnlDetails.SuspendLayout()
+        CType(Me.MyDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeader.SuspendLayout()
         Me.pnlBottomLeft.SuspendLayout()
         Me.pnlBottomRight.SuspendLayout()
         Me.pnlFooter.SuspendLayout()
-        CType(Me.MyDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlFooterButton
@@ -285,491 +285,6 @@ Partial Class FrmInvoiceGST
         Me.pnlDetails.Name = "pnlDetails"
         Me.pnlDetails.Size = New System.Drawing.Size(1362, 243)
         Me.pnlDetails.TabIndex = 4
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(853, 101)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(89, 16)
-        Me.Label17.TabIndex = 63
-        Me.Label17.Text = "Round Off : "
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(12, 15)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(71, 16)
-        Me.Label25.TabIndex = 60
-        Me.Label25.Text = "Remark : "
-        '
-        'dtpLrRrDate
-        '
-        Me.dtpLrRrDate.Location = New System.Drawing.Point(413, 98)
-        Me.dtpLrRrDate.Mask = "00/00/0000"
-        Me.dtpLrRrDate.Name = "dtpLrRrDate"
-        Me.dtpLrRrDate.Size = New System.Drawing.Size(122, 22)
-        Me.dtpLrRrDate.TabIndex = 7
-        Me.dtpLrRrDate.ValidatingType = GetType(Date)
-        '
-        'dtpChallanDate
-        '
-        Me.dtpChallanDate.Location = New System.Drawing.Point(413, 67)
-        Me.dtpChallanDate.Mask = "00/00/0000"
-        Me.dtpChallanDate.Name = "dtpChallanDate"
-        Me.dtpChallanDate.Size = New System.Drawing.Size(122, 22)
-        Me.dtpChallanDate.TabIndex = 5
-        Me.dtpChallanDate.ValidatingType = GetType(Date)
-        '
-        'dtpOrderDate
-        '
-        Me.dtpOrderDate.Location = New System.Drawing.Point(413, 38)
-        Me.dtpOrderDate.Mask = "00/00/0000"
-        Me.dtpOrderDate.Name = "dtpOrderDate"
-        Me.dtpOrderDate.Size = New System.Drawing.Size(122, 22)
-        Me.dtpOrderDate.TabIndex = 3
-        Me.dtpOrderDate.ValidatingType = GetType(Date)
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(1030, 101)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 16)
-        Me.Label11.TabIndex = 70
-        Me.Label11.Text = "ID : "
-        '
-        'cmbPartyName
-        '
-        Me.cmbPartyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbPartyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cmbPartyName.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cmbPartyName.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbPartyName.FormattingEnabled = True
-        Me.cmbPartyName.Location = New System.Drawing.Point(134, 158)
-        Me.cmbPartyName.Name = "cmbPartyName"
-        Me.cmbPartyName.Size = New System.Drawing.Size(266, 24)
-        Me.cmbPartyName.TabIndex = 9
-        '
-        'chkPerformaInvoice
-        '
-        Me.chkPerformaInvoice.AutoSize = True
-        Me.chkPerformaInvoice.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkPerformaInvoice.Location = New System.Drawing.Point(1123, 161)
-        Me.chkPerformaInvoice.Name = "chkPerformaInvoice"
-        Me.chkPerformaInvoice.Size = New System.Drawing.Size(138, 20)
-        Me.chkPerformaInvoice.TabIndex = 12
-        Me.chkPerformaInvoice.Text = "Performa Invoice"
-        Me.chkPerformaInvoice.UseVisualStyleBackColor = True
-        '
-        'cmbInvType
-        '
-        Me.cmbInvType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbInvType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cmbInvType.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbInvType.FormattingEnabled = True
-        Me.cmbInvType.Location = New System.Drawing.Point(1125, 129)
-        Me.cmbInvType.Name = "cmbInvType"
-        Me.cmbInvType.Size = New System.Drawing.Size(133, 24)
-        Me.cmbInvType.TabIndex = 11
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(1030, 132)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(86, 16)
-        Me.Label10.TabIndex = 69
-        Me.Label10.Text = "Inv. Type : "
-        '
-        'pnlHeader
-        '
-        Me.pnlHeader.Controls.Add(Me.Label12)
-        Me.pnlHeader.Controls.Add(Me.txtLHSNCode)
-        Me.pnlHeader.Controls.Add(Me.chkPerformaInvoice)
-        Me.pnlHeader.Controls.Add(Me.cmbInvType)
-        Me.pnlHeader.Controls.Add(Me.dtpQDate)
-        Me.pnlHeader.Controls.Add(Me.Label10)
-        Me.pnlHeader.Controls.Add(Me.txtParticular)
-        Me.pnlHeader.Controls.Add(Me.Label11)
-        Me.pnlHeader.Controls.Add(Me.Label23)
-        Me.pnlHeader.Controls.Add(Me.cmbStateName)
-        Me.pnlHeader.Controls.Add(Me.txtGSTNo)
-        Me.pnlHeader.Controls.Add(Me.Label1)
-        Me.pnlHeader.Controls.Add(Me.dtpLrRrDate)
-        Me.pnlHeader.Controls.Add(Me.dtpChallanDate)
-        Me.pnlHeader.Controls.Add(Me.dtpOrderDate)
-        Me.pnlHeader.Controls.Add(Me.lblQNoCopy)
-        Me.pnlHeader.Controls.Add(Me.cmbPartyName)
-        Me.pnlHeader.Controls.Add(Me.txtAddress)
-        Me.pnlHeader.Controls.Add(Me.lblQNo)
-        Me.pnlHeader.Controls.Add(Me.txtQNoCopy)
-        Me.pnlHeader.Controls.Add(Me.Label2)
-        Me.pnlHeader.Controls.Add(Me.btnCopy)
-        Me.pnlHeader.Controls.Add(Me.Label3)
-        Me.pnlHeader.Controls.Add(Me.btnAddNewRow)
-        Me.pnlHeader.Controls.Add(Me.Label4)
-        Me.pnlHeader.Controls.Add(Me.Label7)
-        Me.pnlHeader.Controls.Add(Me.Label5)
-        Me.pnlHeader.Controls.Add(Me.Label6)
-        Me.pnlHeader.Controls.Add(Me.Label9)
-        Me.pnlHeader.Controls.Add(Me.txtLrRrNo)
-        Me.pnlHeader.Controls.Add(Me.txtQNo)
-        Me.pnlHeader.Controls.Add(Me.Label8)
-        Me.pnlHeader.Controls.Add(Me.txtOrderNo)
-        Me.pnlHeader.Controls.Add(Me.txtChallanNo)
-        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
-        Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1362, 188)
-        Me.pnlHeader.TabIndex = 1
-        '
-        'dtpQDate
-        '
-        Me.dtpQDate.Location = New System.Drawing.Point(413, 5)
-        Me.dtpQDate.Mask = "00/00/0000"
-        Me.dtpQDate.Name = "dtpQDate"
-        Me.dtpQDate.Size = New System.Drawing.Size(122, 22)
-        Me.dtpQDate.TabIndex = 1
-        Me.dtpQDate.ValidatingType = GetType(Date)
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(9, 130)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(62, 16)
-        Me.Label23.TabIndex = 69
-        Me.Label23.Text = "GST No."
-        '
-        'cmbStateName
-        '
-        Me.cmbStateName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbStateName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cmbStateName.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbStateName.FormattingEnabled = True
-        Me.cmbStateName.Location = New System.Drawing.Point(676, 158)
-        Me.cmbStateName.Name = "cmbStateName"
-        Me.cmbStateName.Size = New System.Drawing.Size(266, 24)
-        Me.cmbStateName.TabIndex = 10
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(567, 161)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 16)
-        Me.Label1.TabIndex = 69
-        Me.Label1.Text = "State Name"
-        '
-        'lblQNoCopy
-        '
-        Me.lblQNoCopy.AutoSize = True
-        Me.lblQNoCopy.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQNoCopy.Location = New System.Drawing.Point(567, 130)
-        Me.lblQNoCopy.Name = "lblQNoCopy"
-        Me.lblQNoCopy.Size = New System.Drawing.Size(45, 16)
-        Me.lblQNoCopy.TabIndex = 59
-        Me.lblQNoCopy.Text = "Q No."
-        '
-        'txtAddress
-        '
-        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAddress.Location = New System.Drawing.Point(1033, 5)
-        Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(225, 90)
-        Me.txtAddress.TabIndex = 65
-        Me.txtAddress.Text = ""
-        '
-        'lblQNo
-        '
-        Me.lblQNo.AutoSize = True
-        Me.lblQNo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQNo.Location = New System.Drawing.Point(9, 8)
-        Me.lblQNo.Name = "lblQNo"
-        Me.lblQNo.Size = New System.Drawing.Size(45, 16)
-        Me.lblQNo.TabIndex = 54
-        Me.lblQNo.Text = "Q No."
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(9, 39)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 16)
-        Me.Label2.TabIndex = 55
-        Me.Label2.Text = "Order No."
-        '
-        'btnCopy
-        '
-        Me.btnCopy.Location = New System.Drawing.Point(861, 125)
-        Me.btnCopy.Name = "btnCopy"
-        Me.btnCopy.Size = New System.Drawing.Size(83, 27)
-        Me.btnCopy.TabIndex = 64
-        Me.btnCopy.Text = "Copy"
-        Me.btnCopy.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(9, 68)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 16)
-        Me.Label3.TabIndex = 56
-        Me.Label3.Text = "Challan No."
-        '
-        'btnAddNewRow
-        '
-        Me.btnAddNewRow.Location = New System.Drawing.Point(413, 155)
-        Me.btnAddNewRow.Name = "btnAddNewRow"
-        Me.btnAddNewRow.Size = New System.Drawing.Size(122, 29)
-        Me.btnAddNewRow.TabIndex = 80
-        Me.btnAddNewRow.Text = "Add Row"
-        Me.btnAddNewRow.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(9, 99)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 16)
-        Me.Label4.TabIndex = 57
-        Me.Label4.Text = "LR / RR No."
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(344, 39)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(55, 16)
-        Me.Label7.TabIndex = 63
-        Me.Label7.Text = "Date : "
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(9, 161)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 16)
-        Me.Label5.TabIndex = 58
-        Me.Label5.Text = "Party Name"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(344, 8)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 16)
-        Me.Label6.TabIndex = 61
-        Me.Label6.Text = "Date : "
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(344, 99)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(55, 16)
-        Me.Label9.TabIndex = 67
-        Me.Label9.Text = "Date : "
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(344, 68)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(55, 16)
-        Me.Label8.TabIndex = 66
-        Me.Label8.Text = "Date : "
-        '
-        'pnlBottomLeft
-        '
-        Me.pnlBottomLeft.Controls.Add(Me.btnTerms)
-        Me.pnlBottomLeft.Controls.Add(Me.txtRemark)
-        Me.pnlBottomLeft.Controls.Add(Me.Label25)
-        Me.pnlBottomLeft.Controls.Add(Me.chkCopyEntry)
-        Me.pnlBottomLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pnlBottomLeft.Location = New System.Drawing.Point(0, 0)
-        Me.pnlBottomLeft.Name = "pnlBottomLeft"
-        Me.pnlBottomLeft.Size = New System.Drawing.Size(336, 164)
-        Me.pnlBottomLeft.TabIndex = 5
-        '
-        'btnTerms
-        '
-        Me.btnTerms.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTerms.Location = New System.Drawing.Point(3, 132)
-        Me.btnTerms.Name = "btnTerms"
-        Me.btnTerms.Size = New System.Drawing.Size(68, 26)
-        Me.btnTerms.TabIndex = 61
-        Me.btnTerms.Text = "Terms"
-        Me.btnTerms.UseVisualStyleBackColor = True
-        '
-        'pnlBottomRight
-        '
-        Me.pnlBottomRight.Controls.Add(Me.txtLabourDisPer)
-        Me.pnlBottomRight.Controls.Add(Me.txtlabourDisAmt)
-        Me.pnlBottomRight.Controls.Add(Me.lblLabourDisPer)
-        Me.pnlBottomRight.Controls.Add(Me.lbllabourDisAmt)
-        Me.pnlBottomRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pnlBottomRight.Location = New System.Drawing.Point(1099, 0)
-        Me.pnlBottomRight.Name = "pnlBottomRight"
-        Me.pnlBottomRight.Size = New System.Drawing.Size(263, 164)
-        Me.pnlBottomRight.TabIndex = 6
-        '
-        'lblLabourDisPer
-        '
-        Me.lblLabourDisPer.AutoSize = True
-        Me.lblLabourDisPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLabourDisPer.Location = New System.Drawing.Point(7, 11)
-        Me.lblLabourDisPer.Name = "lblLabourDisPer"
-        Me.lblLabourDisPer.Size = New System.Drawing.Size(97, 16)
-        Me.lblLabourDisPer.TabIndex = 76
-        Me.lblLabourDisPer.Text = "Labour Dis. : "
-        '
-        'lbllabourDisAmt
-        '
-        Me.lbllabourDisAmt.AutoSize = True
-        Me.lbllabourDisAmt.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbllabourDisAmt.Location = New System.Drawing.Point(7, 42)
-        Me.lbllabourDisAmt.Name = "lbllabourDisAmt"
-        Me.lbllabourDisAmt.Size = New System.Drawing.Size(128, 16)
-        Me.lbllabourDisAmt.TabIndex = 77
-        Me.lbllabourDisAmt.Text = "Labour Dis Amt. : "
-        '
-        'pnlFooter
-        '
-        Me.pnlFooter.Controls.Add(Me.Label27)
-        Me.pnlFooter.Controls.Add(Me.Label26)
-        Me.pnlFooter.Controls.Add(Me.Label16)
-        Me.pnlFooter.Controls.Add(Me.Label20)
-        Me.pnlFooter.Controls.Add(Me.Label24)
-        Me.pnlFooter.Controls.Add(Me.Label15)
-        Me.pnlFooter.Controls.Add(Me.Label14)
-        Me.pnlFooter.Controls.Add(Me.Label19)
-        Me.pnlFooter.Controls.Add(Me.txtIGST5)
-        Me.pnlFooter.Controls.Add(Me.txtIGST12)
-        Me.pnlFooter.Controls.Add(Me.txtCGST5)
-        Me.pnlFooter.Controls.Add(Me.txtCGST12)
-        Me.pnlFooter.Controls.Add(Me.txtIGST18)
-        Me.pnlFooter.Controls.Add(Me.txtIGST28)
-        Me.pnlFooter.Controls.Add(Me.txtCGST18)
-        Me.pnlFooter.Controls.Add(Me.txtCGST28)
-        Me.pnlFooter.Controls.Add(Me.txtSGST18)
-        Me.pnlFooter.Controls.Add(Me.txtSGST28)
-        Me.pnlFooter.Controls.Add(Me.pnlBottomRight)
-        Me.pnlFooter.Controls.Add(Me.pnlBottomLeft)
-        Me.pnlFooter.Controls.Add(Me.pnlFooterButton)
-        Me.pnlFooter.Controls.Add(Me.txtNetAmt)
-        Me.pnlFooter.Controls.Add(Me.txtDiscountAmt)
-        Me.pnlFooter.Controls.Add(Me.txtTotalAmt)
-        Me.pnlFooter.Controls.Add(Me.Label18)
-        Me.pnlFooter.Controls.Add(Me.Label21)
-        Me.pnlFooter.Controls.Add(Me.Label22)
-        Me.pnlFooter.Controls.Add(Me.txtRoundOff)
-        Me.pnlFooter.Controls.Add(Me.txtGAmt)
-        Me.pnlFooter.Controls.Add(Me.txtSGST5)
-        Me.pnlFooter.Controls.Add(Me.txtSGST12)
-        Me.pnlFooter.Controls.Add(Me.Label13)
-        Me.pnlFooter.Controls.Add(Me.Label17)
-        Me.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlFooter.Location = New System.Drawing.Point(0, 431)
-        Me.pnlFooter.Name = "pnlFooter"
-        Me.pnlFooter.Size = New System.Drawing.Size(1362, 212)
-        Me.pnlFooter.TabIndex = 71
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(708, 11)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(40, 16)
-        Me.Label27.TabIndex = 102
-        Me.Label27.Text = "IGST"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(569, 11)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(44, 16)
-        Me.Label26.TabIndex = 101
-        Me.Label26.Text = "CGST"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(429, 11)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(44, 16)
-        Me.Label16.TabIndex = 100
-        Me.Label16.Text = "SGST"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(342, 133)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(37, 16)
-        Me.Label20.TabIndex = 99
-        Me.Label20.Text = "28%"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(342, 104)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(37, 16)
-        Me.Label24.TabIndex = 98
-        Me.Label24.Text = "18%"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(342, 70)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(37, 16)
-        Me.Label15.TabIndex = 94
-        Me.Label15.Text = "12%"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(350, 41)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(29, 16)
-        Me.Label14.TabIndex = 93
-        Me.Label14.Text = "5%"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(344, 11)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(35, 16)
-        Me.Label19.TabIndex = 92
-        Me.Label19.Text = "GST"
         '
         'MyDataGridView1
         '
@@ -998,6 +513,177 @@ Partial Class FrmInvoiceGST
         Me.iAmount.Name = "iAmount"
         Me.iAmount.ReadOnly = True
         '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(853, 101)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(89, 16)
+        Me.Label17.TabIndex = 63
+        Me.Label17.Text = "Round Off : "
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(12, 15)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(71, 16)
+        Me.Label25.TabIndex = 60
+        Me.Label25.Text = "Remark : "
+        '
+        'dtpLrRrDate
+        '
+        Me.dtpLrRrDate.Location = New System.Drawing.Point(413, 98)
+        Me.dtpLrRrDate.Mask = "00/00/0000"
+        Me.dtpLrRrDate.Name = "dtpLrRrDate"
+        Me.dtpLrRrDate.Size = New System.Drawing.Size(122, 22)
+        Me.dtpLrRrDate.TabIndex = 7
+        Me.dtpLrRrDate.ValidatingType = GetType(Date)
+        '
+        'dtpChallanDate
+        '
+        Me.dtpChallanDate.Location = New System.Drawing.Point(413, 67)
+        Me.dtpChallanDate.Mask = "00/00/0000"
+        Me.dtpChallanDate.Name = "dtpChallanDate"
+        Me.dtpChallanDate.Size = New System.Drawing.Size(122, 22)
+        Me.dtpChallanDate.TabIndex = 5
+        Me.dtpChallanDate.ValidatingType = GetType(Date)
+        '
+        'dtpOrderDate
+        '
+        Me.dtpOrderDate.Location = New System.Drawing.Point(413, 38)
+        Me.dtpOrderDate.Mask = "00/00/0000"
+        Me.dtpOrderDate.Name = "dtpOrderDate"
+        Me.dtpOrderDate.Size = New System.Drawing.Size(122, 22)
+        Me.dtpOrderDate.TabIndex = 3
+        Me.dtpOrderDate.ValidatingType = GetType(Date)
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(1030, 101)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(38, 16)
+        Me.Label11.TabIndex = 70
+        Me.Label11.Text = "ID : "
+        '
+        'cmbPartyName
+        '
+        Me.cmbPartyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbPartyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbPartyName.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cmbPartyName.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbPartyName.FormattingEnabled = True
+        Me.cmbPartyName.Location = New System.Drawing.Point(134, 158)
+        Me.cmbPartyName.Name = "cmbPartyName"
+        Me.cmbPartyName.Size = New System.Drawing.Size(266, 24)
+        Me.cmbPartyName.TabIndex = 9
+        '
+        'chkPerformaInvoice
+        '
+        Me.chkPerformaInvoice.AutoSize = True
+        Me.chkPerformaInvoice.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkPerformaInvoice.Location = New System.Drawing.Point(1123, 161)
+        Me.chkPerformaInvoice.Name = "chkPerformaInvoice"
+        Me.chkPerformaInvoice.Size = New System.Drawing.Size(138, 20)
+        Me.chkPerformaInvoice.TabIndex = 12
+        Me.chkPerformaInvoice.Text = "Performa Invoice"
+        Me.chkPerformaInvoice.UseVisualStyleBackColor = True
+        '
+        'cmbInvType
+        '
+        Me.cmbInvType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbInvType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbInvType.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbInvType.FormattingEnabled = True
+        Me.cmbInvType.Location = New System.Drawing.Point(1125, 129)
+        Me.cmbInvType.Name = "cmbInvType"
+        Me.cmbInvType.Size = New System.Drawing.Size(133, 24)
+        Me.cmbInvType.TabIndex = 11
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(1030, 132)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(86, 16)
+        Me.Label10.TabIndex = 69
+        Me.Label10.Text = "Inv. Type : "
+        '
+        'pnlHeader
+        '
+        Me.pnlHeader.Controls.Add(Me.Label12)
+        Me.pnlHeader.Controls.Add(Me.txtLHSNCode)
+        Me.pnlHeader.Controls.Add(Me.chkPerformaInvoice)
+        Me.pnlHeader.Controls.Add(Me.cmbInvType)
+        Me.pnlHeader.Controls.Add(Me.dtpQDate)
+        Me.pnlHeader.Controls.Add(Me.Label10)
+        Me.pnlHeader.Controls.Add(Me.txtParticular)
+        Me.pnlHeader.Controls.Add(Me.Label11)
+        Me.pnlHeader.Controls.Add(Me.Label23)
+        Me.pnlHeader.Controls.Add(Me.cmbStateName)
+        Me.pnlHeader.Controls.Add(Me.txtGSTNo)
+        Me.pnlHeader.Controls.Add(Me.Label1)
+        Me.pnlHeader.Controls.Add(Me.dtpLrRrDate)
+        Me.pnlHeader.Controls.Add(Me.dtpChallanDate)
+        Me.pnlHeader.Controls.Add(Me.dtpOrderDate)
+        Me.pnlHeader.Controls.Add(Me.lblQNoCopy)
+        Me.pnlHeader.Controls.Add(Me.cmbPartyName)
+        Me.pnlHeader.Controls.Add(Me.txtAddress)
+        Me.pnlHeader.Controls.Add(Me.lblQNo)
+        Me.pnlHeader.Controls.Add(Me.txtQNoCopy)
+        Me.pnlHeader.Controls.Add(Me.Label2)
+        Me.pnlHeader.Controls.Add(Me.btnCopy)
+        Me.pnlHeader.Controls.Add(Me.Label3)
+        Me.pnlHeader.Controls.Add(Me.btnAddNewRow)
+        Me.pnlHeader.Controls.Add(Me.Label4)
+        Me.pnlHeader.Controls.Add(Me.Label7)
+        Me.pnlHeader.Controls.Add(Me.Label5)
+        Me.pnlHeader.Controls.Add(Me.Label6)
+        Me.pnlHeader.Controls.Add(Me.Label9)
+        Me.pnlHeader.Controls.Add(Me.txtLrRrNo)
+        Me.pnlHeader.Controls.Add(Me.txtQNo)
+        Me.pnlHeader.Controls.Add(Me.Label8)
+        Me.pnlHeader.Controls.Add(Me.txtOrderNo)
+        Me.pnlHeader.Controls.Add(Me.txtChallanNo)
+        Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Name = "pnlHeader"
+        Me.pnlHeader.Size = New System.Drawing.Size(1362, 188)
+        Me.pnlHeader.TabIndex = 1
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(567, 100)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(80, 16)
+        Me.Label12.TabIndex = 82
+        Me.Label12.Text = "L.HSNCode"
+        '
+        'txtLHSNCode
+        '
+        Me.txtLHSNCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLHSNCode.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLHSNCode.Location = New System.Drawing.Point(676, 98)
+        Me.txtLHSNCode.Name = "txtLHSNCode"
+        Me.txtLHSNCode.Size = New System.Drawing.Size(172, 23)
+        Me.txtLHSNCode.TabIndex = 81
+        '
+        'dtpQDate
+        '
+        Me.dtpQDate.Location = New System.Drawing.Point(413, 5)
+        Me.dtpQDate.Mask = "00/00/0000"
+        Me.dtpQDate.Name = "dtpQDate"
+        Me.dtpQDate.Size = New System.Drawing.Size(122, 22)
+        Me.dtpQDate.TabIndex = 1
+        Me.dtpQDate.ValidatingType = GetType(Date)
+        '
         'txtParticular
         '
         Me.txtParticular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1008,6 +694,27 @@ Partial Class FrmInvoiceGST
         Me.txtParticular.TabIndex = 13
         Me.txtParticular.Text = "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
         '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(9, 130)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(62, 16)
+        Me.Label23.TabIndex = 69
+        Me.Label23.Text = "GST No."
+        '
+        'cmbStateName
+        '
+        Me.cmbStateName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cmbStateName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cmbStateName.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbStateName.FormattingEnabled = True
+        Me.cmbStateName.Location = New System.Drawing.Point(676, 158)
+        Me.cmbStateName.Name = "cmbStateName"
+        Me.cmbStateName.Size = New System.Drawing.Size(266, 24)
+        Me.cmbStateName.TabIndex = 10
+        '
         'txtGSTNo
         '
         Me.txtGSTNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1017,6 +724,45 @@ Partial Class FrmInvoiceGST
         Me.txtGSTNo.Size = New System.Drawing.Size(167, 23)
         Me.txtGSTNo.TabIndex = 8
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(567, 161)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 16)
+        Me.Label1.TabIndex = 69
+        Me.Label1.Text = "State Name"
+        '
+        'lblQNoCopy
+        '
+        Me.lblQNoCopy.AutoSize = True
+        Me.lblQNoCopy.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblQNoCopy.Location = New System.Drawing.Point(567, 130)
+        Me.lblQNoCopy.Name = "lblQNoCopy"
+        Me.lblQNoCopy.Size = New System.Drawing.Size(45, 16)
+        Me.lblQNoCopy.TabIndex = 59
+        Me.lblQNoCopy.Text = "Q No."
+        '
+        'txtAddress
+        '
+        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAddress.Location = New System.Drawing.Point(1033, 5)
+        Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.Size = New System.Drawing.Size(225, 90)
+        Me.txtAddress.TabIndex = 65
+        Me.txtAddress.Text = ""
+        '
+        'lblQNo
+        '
+        Me.lblQNo.AutoSize = True
+        Me.lblQNo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblQNo.Location = New System.Drawing.Point(9, 8)
+        Me.lblQNo.Name = "lblQNo"
+        Me.lblQNo.Size = New System.Drawing.Size(45, 16)
+        Me.lblQNo.TabIndex = 54
+        Me.lblQNo.Text = "Q No."
+        '
         'txtQNoCopy
         '
         Me.txtQNoCopy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1025,6 +771,94 @@ Partial Class FrmInvoiceGST
         Me.txtQNoCopy.Name = "txtQNoCopy"
         Me.txtQNoCopy.Size = New System.Drawing.Size(172, 23)
         Me.txtQNoCopy.TabIndex = 60
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(9, 39)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(71, 16)
+        Me.Label2.TabIndex = 55
+        Me.Label2.Text = "Order No."
+        '
+        'btnCopy
+        '
+        Me.btnCopy.Location = New System.Drawing.Point(861, 125)
+        Me.btnCopy.Name = "btnCopy"
+        Me.btnCopy.Size = New System.Drawing.Size(83, 27)
+        Me.btnCopy.TabIndex = 64
+        Me.btnCopy.Text = "Copy"
+        Me.btnCopy.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(9, 68)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(82, 16)
+        Me.Label3.TabIndex = 56
+        Me.Label3.Text = "Challan No."
+        '
+        'btnAddNewRow
+        '
+        Me.btnAddNewRow.Location = New System.Drawing.Point(413, 155)
+        Me.btnAddNewRow.Name = "btnAddNewRow"
+        Me.btnAddNewRow.Size = New System.Drawing.Size(122, 29)
+        Me.btnAddNewRow.TabIndex = 80
+        Me.btnAddNewRow.Text = "Add Row"
+        Me.btnAddNewRow.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(9, 99)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(82, 16)
+        Me.Label4.TabIndex = 57
+        Me.Label4.Text = "LR / RR No."
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(344, 39)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(55, 16)
+        Me.Label7.TabIndex = 63
+        Me.Label7.Text = "Date : "
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(9, 161)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(84, 16)
+        Me.Label5.TabIndex = 58
+        Me.Label5.Text = "Party Name"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(344, 8)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(55, 16)
+        Me.Label6.TabIndex = 61
+        Me.Label6.Text = "Date : "
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(344, 99)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(55, 16)
+        Me.Label9.TabIndex = 67
+        Me.Label9.Text = "Date : "
         '
         'txtLrRrNo
         '
@@ -1045,6 +879,16 @@ Partial Class FrmInvoiceGST
         Me.txtQNo.Size = New System.Drawing.Size(167, 23)
         Me.txtQNo.TabIndex = 0
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(344, 68)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(55, 16)
+        Me.Label8.TabIndex = 66
+        Me.Label8.Text = "Date : "
+        '
         'txtOrderNo
         '
         Me.txtOrderNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1062,6 +906,212 @@ Partial Class FrmInvoiceGST
         Me.txtChallanNo.Name = "txtChallanNo"
         Me.txtChallanNo.Size = New System.Drawing.Size(167, 23)
         Me.txtChallanNo.TabIndex = 4
+        '
+        'pnlBottomLeft
+        '
+        Me.pnlBottomLeft.Controls.Add(Me.btnTerms)
+        Me.pnlBottomLeft.Controls.Add(Me.txtRemark)
+        Me.pnlBottomLeft.Controls.Add(Me.Label25)
+        Me.pnlBottomLeft.Controls.Add(Me.chkCopyEntry)
+        Me.pnlBottomLeft.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlBottomLeft.Location = New System.Drawing.Point(0, 0)
+        Me.pnlBottomLeft.Name = "pnlBottomLeft"
+        Me.pnlBottomLeft.Size = New System.Drawing.Size(336, 164)
+        Me.pnlBottomLeft.TabIndex = 5
+        '
+        'btnTerms
+        '
+        Me.btnTerms.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTerms.Location = New System.Drawing.Point(3, 132)
+        Me.btnTerms.Name = "btnTerms"
+        Me.btnTerms.Size = New System.Drawing.Size(68, 26)
+        Me.btnTerms.TabIndex = 61
+        Me.btnTerms.Text = "Terms"
+        Me.btnTerms.UseVisualStyleBackColor = True
+        '
+        'txtRemark
+        '
+        Me.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtRemark.Location = New System.Drawing.Point(105, 8)
+        Me.txtRemark.Multiline = True
+        Me.txtRemark.Name = "txtRemark"
+        Me.txtRemark.Size = New System.Drawing.Size(193, 109)
+        Me.txtRemark.TabIndex = 15
+        '
+        'pnlBottomRight
+        '
+        Me.pnlBottomRight.Controls.Add(Me.txtLabourDisPer)
+        Me.pnlBottomRight.Controls.Add(Me.txtlabourDisAmt)
+        Me.pnlBottomRight.Controls.Add(Me.lblLabourDisPer)
+        Me.pnlBottomRight.Controls.Add(Me.lbllabourDisAmt)
+        Me.pnlBottomRight.Dock = System.Windows.Forms.DockStyle.Right
+        Me.pnlBottomRight.Location = New System.Drawing.Point(1099, 0)
+        Me.pnlBottomRight.Name = "pnlBottomRight"
+        Me.pnlBottomRight.Size = New System.Drawing.Size(263, 164)
+        Me.pnlBottomRight.TabIndex = 6
+        '
+        'txtLabourDisPer
+        '
+        Me.txtLabourDisPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLabourDisPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLabourDisPer.Location = New System.Drawing.Point(149, 8)
+        Me.txtLabourDisPer.Name = "txtLabourDisPer"
+        Me.txtLabourDisPer.Size = New System.Drawing.Size(108, 23)
+        Me.txtLabourDisPer.TabIndex = 16
+        Me.txtLabourDisPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtlabourDisAmt
+        '
+        Me.txtlabourDisAmt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtlabourDisAmt.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtlabourDisAmt.Location = New System.Drawing.Point(149, 39)
+        Me.txtlabourDisAmt.Name = "txtlabourDisAmt"
+        Me.txtlabourDisAmt.ReadOnly = True
+        Me.txtlabourDisAmt.Size = New System.Drawing.Size(109, 23)
+        Me.txtlabourDisAmt.TabIndex = 79
+        Me.txtlabourDisAmt.TabStop = False
+        Me.txtlabourDisAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lblLabourDisPer
+        '
+        Me.lblLabourDisPer.AutoSize = True
+        Me.lblLabourDisPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLabourDisPer.Location = New System.Drawing.Point(7, 11)
+        Me.lblLabourDisPer.Name = "lblLabourDisPer"
+        Me.lblLabourDisPer.Size = New System.Drawing.Size(97, 16)
+        Me.lblLabourDisPer.TabIndex = 76
+        Me.lblLabourDisPer.Text = "Labour Dis. : "
+        '
+        'lbllabourDisAmt
+        '
+        Me.lbllabourDisAmt.AutoSize = True
+        Me.lbllabourDisAmt.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbllabourDisAmt.Location = New System.Drawing.Point(7, 42)
+        Me.lbllabourDisAmt.Name = "lbllabourDisAmt"
+        Me.lbllabourDisAmt.Size = New System.Drawing.Size(128, 16)
+        Me.lbllabourDisAmt.TabIndex = 77
+        Me.lbllabourDisAmt.Text = "Labour Dis Amt. : "
+        '
+        'pnlFooter
+        '
+        Me.pnlFooter.Controls.Add(Me.Label27)
+        Me.pnlFooter.Controls.Add(Me.Label26)
+        Me.pnlFooter.Controls.Add(Me.Label16)
+        Me.pnlFooter.Controls.Add(Me.Label20)
+        Me.pnlFooter.Controls.Add(Me.Label24)
+        Me.pnlFooter.Controls.Add(Me.Label15)
+        Me.pnlFooter.Controls.Add(Me.Label14)
+        Me.pnlFooter.Controls.Add(Me.Label19)
+        Me.pnlFooter.Controls.Add(Me.txtIGST5)
+        Me.pnlFooter.Controls.Add(Me.txtIGST12)
+        Me.pnlFooter.Controls.Add(Me.txtCGST5)
+        Me.pnlFooter.Controls.Add(Me.txtCGST12)
+        Me.pnlFooter.Controls.Add(Me.txtIGST18)
+        Me.pnlFooter.Controls.Add(Me.txtIGST28)
+        Me.pnlFooter.Controls.Add(Me.txtCGST18)
+        Me.pnlFooter.Controls.Add(Me.txtCGST28)
+        Me.pnlFooter.Controls.Add(Me.txtSGST18)
+        Me.pnlFooter.Controls.Add(Me.txtSGST28)
+        Me.pnlFooter.Controls.Add(Me.pnlBottomRight)
+        Me.pnlFooter.Controls.Add(Me.pnlBottomLeft)
+        Me.pnlFooter.Controls.Add(Me.pnlFooterButton)
+        Me.pnlFooter.Controls.Add(Me.txtNetAmt)
+        Me.pnlFooter.Controls.Add(Me.txtDiscountAmt)
+        Me.pnlFooter.Controls.Add(Me.txtTotalAmt)
+        Me.pnlFooter.Controls.Add(Me.Label18)
+        Me.pnlFooter.Controls.Add(Me.Label21)
+        Me.pnlFooter.Controls.Add(Me.Label22)
+        Me.pnlFooter.Controls.Add(Me.txtRoundOff)
+        Me.pnlFooter.Controls.Add(Me.txtGAmt)
+        Me.pnlFooter.Controls.Add(Me.txtSGST5)
+        Me.pnlFooter.Controls.Add(Me.txtSGST12)
+        Me.pnlFooter.Controls.Add(Me.Label13)
+        Me.pnlFooter.Controls.Add(Me.Label17)
+        Me.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlFooter.Location = New System.Drawing.Point(0, 431)
+        Me.pnlFooter.Name = "pnlFooter"
+        Me.pnlFooter.Size = New System.Drawing.Size(1362, 212)
+        Me.pnlFooter.TabIndex = 71
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(708, 11)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(40, 16)
+        Me.Label27.TabIndex = 102
+        Me.Label27.Text = "IGST"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(569, 11)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(44, 16)
+        Me.Label26.TabIndex = 101
+        Me.Label26.Text = "CGST"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(429, 11)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(44, 16)
+        Me.Label16.TabIndex = 100
+        Me.Label16.Text = "SGST"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(342, 133)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(37, 16)
+        Me.Label20.TabIndex = 99
+        Me.Label20.Text = "28%"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(342, 104)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(37, 16)
+        Me.Label24.TabIndex = 98
+        Me.Label24.Text = "18%"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(342, 70)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(37, 16)
+        Me.Label15.TabIndex = 94
+        Me.Label15.Text = "12%"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(350, 41)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(29, 16)
+        Me.Label14.TabIndex = 93
+        Me.Label14.Text = "5%"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(344, 11)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(35, 16)
+        Me.Label19.TabIndex = 92
+        Me.Label19.Text = "GST"
         '
         'txtIGST5
         '
@@ -1183,37 +1233,6 @@ Partial Class FrmInvoiceGST
         Me.txtSGST28.TabStop = False
         Me.txtSGST28.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtLabourDisPer
-        '
-        Me.txtLabourDisPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLabourDisPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLabourDisPer.Location = New System.Drawing.Point(149, 8)
-        Me.txtLabourDisPer.Name = "txtLabourDisPer"
-        Me.txtLabourDisPer.Size = New System.Drawing.Size(108, 23)
-        Me.txtLabourDisPer.TabIndex = 16
-        Me.txtLabourDisPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtlabourDisAmt
-        '
-        Me.txtlabourDisAmt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtlabourDisAmt.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtlabourDisAmt.Location = New System.Drawing.Point(149, 39)
-        Me.txtlabourDisAmt.Name = "txtlabourDisAmt"
-        Me.txtlabourDisAmt.ReadOnly = True
-        Me.txtlabourDisAmt.Size = New System.Drawing.Size(109, 23)
-        Me.txtlabourDisAmt.TabIndex = 79
-        Me.txtlabourDisAmt.TabStop = False
-        Me.txtlabourDisAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtRemark
-        '
-        Me.txtRemark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtRemark.Location = New System.Drawing.Point(105, 8)
-        Me.txtRemark.Multiline = True
-        Me.txtRemark.Name = "txtRemark"
-        Me.txtRemark.Size = New System.Drawing.Size(193, 109)
-        Me.txtRemark.TabIndex = 15
-        '
         'txtNetAmt
         '
         Me.txtNetAmt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1298,25 +1317,6 @@ Partial Class FrmInvoiceGST
         Me.txtSGST12.TabStop = False
         Me.txtSGST12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(567, 100)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(80, 16)
-        Me.Label12.TabIndex = 82
-        Me.Label12.Text = "L.HSNCode"
-        '
-        'txtLHSNCode
-        '
-        Me.txtLHSNCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLHSNCode.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLHSNCode.Location = New System.Drawing.Point(676, 98)
-        Me.txtLHSNCode.Name = "txtLHSNCode"
-        Me.txtLHSNCode.Size = New System.Drawing.Size(172, 23)
-        Me.txtLHSNCode.TabIndex = 81
-        '
         'FrmInvoiceGST
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -1332,6 +1332,7 @@ Partial Class FrmInvoiceGST
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.pnlFooterButton.ResumeLayout(False)
         Me.pnlDetails.ResumeLayout(False)
+        CType(Me.MyDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlHeader.ResumeLayout(False)
         Me.pnlHeader.PerformLayout()
         Me.pnlBottomLeft.ResumeLayout(False)
@@ -1340,7 +1341,6 @@ Partial Class FrmInvoiceGST
         Me.pnlBottomRight.PerformLayout()
         Me.pnlFooter.ResumeLayout(False)
         Me.pnlFooter.PerformLayout()
-        CType(Me.MyDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

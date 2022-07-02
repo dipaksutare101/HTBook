@@ -81,9 +81,11 @@ Public Class FrmInvoiceGST
         '    MyDataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
         '    'MyDataSet.Tables(1).AcceptChanges()
         'End If
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
     End Sub
 
     Private Sub MyDataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles MyDataGridView1.CellEndEdit
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
 
         If e.RowIndex = -1 Then Exit Sub
 
@@ -234,7 +236,7 @@ Public Class FrmInvoiceGST
     Private Sub MyDataGridView1_CellLeave(sender As Object, e As DataGridViewCellEventArgs) Handles MyDataGridView1.CellLeave
         If MyDataGridView1.Columns(e.ColumnIndex).Name = Colsmalla.Name Then
             txtParticular.Focus()
-
+            MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
             'ElseIf MyDataGridView1.Columns(e.ColumnIndex).Name = ColVatper.Name Then
             '    Dim allRow As DataRow = MyDataSet.Tables(1).NewRow
             '    MyDataSet.Tables(1).Rows.InsertAt(allRow, MyDataGridView1.CurrentRow.Index + 1)
@@ -554,6 +556,7 @@ err_h:
 
 
     Private Sub MyDataGridView1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyDataGridView1.KeyDown
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             Dim iCol = MyDataGridView1.CurrentCell.ColumnIndex
@@ -591,6 +594,7 @@ err_h:
     End Sub
 
     Private Sub MyDataGridView1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyDataGridView1.KeyPress
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
         If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Or e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Tab) Then
             'e.SuppressKeyPress = True
             Dim iCol = MyDataGridView1.CurrentCell.ColumnIndex
@@ -670,6 +674,7 @@ err_h:
     End Sub
 
     Private Sub MyDataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles MyDataGridView1.SelectionChanged
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
         If MyDataGridView1.RowCount = 0 Then Exit Sub
         If MyDataGridView1.SelectedRows.Count = 0 Then Exit Sub
         If MyDataGridView1.SelectedRows(0).Cells(ColItemRemark.Name).Value IsNot Nothing And Not IsDBNull(MyDataGridView1.SelectedRows(0).Cells(ColItemRemark.Name).Value) Then
@@ -680,6 +685,7 @@ err_h:
     End Sub
 
     Private Sub MyDataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles MyDataGridView1.CellFormatting
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
         If MyDataGridView1.CurrentCell IsNot Nothing Then
             If e.RowIndex = MyDataGridView1.CurrentCell.RowIndex And e.ColumnIndex = MyDataGridView1.CurrentCell.ColumnIndex Then
                 e.CellStyle.SelectionBackColor = Color.Wheat
