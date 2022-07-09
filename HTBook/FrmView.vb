@@ -5,6 +5,7 @@
 
     Private Sub FrmView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'SplitContainer1.SplitterDistance = 100
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
         dtpToDate.MaxDate = DateTime.Now
         If ViewType Is Nothing Then
             Me.Text = "View"
@@ -71,11 +72,13 @@
     End Sub
 
     Private Sub MyDataGridView1_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles MyDataGridView1.CellMouseDoubleClick
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
         FindId = Val(MyDataGridView1.Rows(e.RowIndex).Cells(0).Value)
         Me.Close()
     End Sub
 
     Private Sub dtpFromDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpFromDate.ValueChanged
+        MyDataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue
         dtpToDate.MinDate = dtpFromDate.Value
     End Sub
 End Class
