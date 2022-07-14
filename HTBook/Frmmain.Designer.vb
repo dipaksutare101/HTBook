@@ -73,9 +73,8 @@ Partial Class Frmmain
         'PartyMasterToolStripMenuItem
         '
         Me.PartyMasterToolStripMenuItem.Name = "PartyMasterToolStripMenuItem"
-        Me.PartyMasterToolStripMenuItem.Size = New System.Drawing.Size(141, 24)
+        Me.PartyMasterToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.PartyMasterToolStripMenuItem.Text = "Party"
-        Me.PartyMasterToolStripMenuItem.Visible = False
         '
         'CustomerToolStripMenuItem
         '
