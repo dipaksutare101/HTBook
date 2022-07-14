@@ -206,7 +206,6 @@ Partial Class Frmmain
         Me.TermsToolStripMenuItem.Name = "TermsToolStripMenuItem"
         Me.TermsToolStripMenuItem.Size = New System.Drawing.Size(60, 24)
         Me.TermsToolStripMenuItem.Text = "Terms"
-        Me.TermsToolStripMenuItem.Visible = False
         '
         'QuatationTermsToolStripMenuItem
         '
