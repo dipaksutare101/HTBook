@@ -393,7 +393,8 @@ err_h:
                 Dim path As String = Application.StartupPath & "\InvWithLabourNew.rpt"
 
                 If cmbInvType.Text.Contains("QUATATION") Then
-                    path = Application.StartupPath & "\QuotationNew.rpt"
+                    'path = Application.StartupPath & "\QuotationNew.rpt"
+                    path = Application.StartupPath & "\QuatationWithLabourNew.rpt"
                 End If
 
                 RD.Load(path)
