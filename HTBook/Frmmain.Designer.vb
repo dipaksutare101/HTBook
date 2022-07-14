@@ -73,26 +73,25 @@ Partial Class Frmmain
         'PartyMasterToolStripMenuItem
         '
         Me.PartyMasterToolStripMenuItem.Name = "PartyMasterToolStripMenuItem"
-        Me.PartyMasterToolStripMenuItem.Size = New System.Drawing.Size(141, 24)
+        Me.PartyMasterToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.PartyMasterToolStripMenuItem.Text = "Party"
-        Me.PartyMasterToolStripMenuItem.Visible = False
         '
         'CustomerToolStripMenuItem
         '
         Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
-        Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(141, 24)
+        Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.CustomerToolStripMenuItem.Text = "Customer"
         '
         'SupplierToolStripMenuItem
         '
         Me.SupplierToolStripMenuItem.Name = "SupplierToolStripMenuItem"
-        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(141, 24)
+        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.SupplierToolStripMenuItem.Text = "Supplier"
         '
         'ItemToolStripMenuItem
         '
         Me.ItemToolStripMenuItem.Name = "ItemToolStripMenuItem"
-        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(141, 24)
+        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.ItemToolStripMenuItem.Text = "Item"
         '
         'TransactionToolStripMenuItem
@@ -211,19 +210,19 @@ Partial Class Frmmain
         'QuatationTermsToolStripMenuItem
         '
         Me.QuatationTermsToolStripMenuItem.Name = "QuatationTermsToolStripMenuItem"
-        Me.QuatationTermsToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.QuatationTermsToolStripMenuItem.Size = New System.Drawing.Size(179, 24)
         Me.QuatationTermsToolStripMenuItem.Text = "Quatation"
         '
         'SupplyInvoiceToolStripMenuItem
         '
         Me.SupplyInvoiceToolStripMenuItem.Name = "SupplyInvoiceToolStripMenuItem"
-        Me.SupplyInvoiceToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.SupplyInvoiceToolStripMenuItem.Size = New System.Drawing.Size(179, 24)
         Me.SupplyInvoiceToolStripMenuItem.Text = "Supply Invoice"
         '
         'LabourInvioceToolStripMenuItem
         '
         Me.LabourInvioceToolStripMenuItem.Name = "LabourInvioceToolStripMenuItem"
-        Me.LabourInvioceToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.LabourInvioceToolStripMenuItem.Size = New System.Drawing.Size(179, 24)
         Me.LabourInvioceToolStripMenuItem.Text = "Labour Invioce "
         '
         'ExitToolStripMenuItem
