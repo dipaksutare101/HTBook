@@ -38,6 +38,8 @@ Public Class FrmInvoiceGST
     Public Sub ClearField()
         txtQNo.Text = ""
         txtLHSNCode.Text = ""
+        txtSupplyPrintPer.Text = ""
+        txtLabPrintPer.Text = ""
         txtOrderNo.Text = ""
         txtChallanNo.Text = ""
         txtLrRrNo.Text = ""
@@ -324,7 +326,8 @@ err_h:
                 If cmbInvType.Text = "LABOUR QUATATION" Then
                     path = Application.StartupPath & "\QuotationLabour.rpt"
                     If IsQuotationNew = True Then
-                        path = Application.StartupPath & "\QuotationLabourNew.rpt"
+                        ' path = Application.StartupPath & "\QuotationLabourNew.rpt"
+                        path = Application.StartupPath & "\QuatationWithLabourNew.rpt"
                     End If
                 End If
 
@@ -499,6 +502,13 @@ err_h:
                     InwardId = EntryId
                     txtQNo.Text = .Item("BillNo").ToString()
                     txtLHSNCode.Text = .Item("LHSNCode").ToString()
+                    If Not IsDBNull(.Item("LabourPrintPer")) Then
+                        txtLabPrintPer.Text = .Item("LabourPrintPer").ToString()
+                    End If
+                    If Not IsDBNull(.Item("SupplyPrintPer")) Then
+                        txtSupplyPrintPer.Text = .Item("SupplyPrintPer").ToString()
+                    End If
+
                     If .Item("InwardDate").ToString() <> String.Empty Then dtpQDate.Text = String.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(.Item("InwardDate").ToString()))
                     txtOrderNo.Text = .Item("OrderNo").ToString()
                     cmbPartyName.SelectedValue = .Item("PartyId").ToString()
@@ -545,6 +555,11 @@ err_h:
 
                 txtLabourDisPer.Text = MyDataSet.Tables(0).Rows(0).Item("DisFive").ToString()
                 txtlabourDisAmt.Text = MyDataSet.Tables(0).Rows(0).Item("DisFiveAmount").ToString()
+                'Dim SPP As Decimal = txtSupplyPrintPer.Text
+                'txtSupplyPrintPer.Text = SPP.ToString("#0.00")
+
+                'Dim LPP As Decimal = txtLabPrintPer.Text
+                'txtLabPrintPer.Text = LPP.ToString("#0.00")
 
                 IsEdit = True
                 txtQNo.Focus()
@@ -798,6 +813,10 @@ err_h:
             Kailash.AddParameter("@CenterId", Val(0))
             Kailash.AddParameter("@BillNo", txtQNo.Text)
             Kailash.AddParameter("@LHSNCode", txtLHSNCode.Text)
+            Kailash.AddParameter("@LabourPrintPer", Val(txtLabPrintPer.Text))
+            Kailash.AddParameter("@SupplyPrintPer", Val(txtSupplyPrintPer.Text))
+            'Kailash.AddParameter("@LabourPrintPer", Val(0))
+            'Kailash.AddParameter("@SupplyPrintPer", Val(0))
             Kailash.AddParameter("@Remark", txtRemark.Text)
             Kailash.AddParameter("@AmountAdd", Val(0))
             Kailash.AddParameter("@AmountLess", Val(0))
@@ -1037,5 +1056,9 @@ err_h:
         InwardId = EntryId
         Frm.StartPosition = FormStartPosition.CenterScreen
         Frm.ShowDialog()
+    End Sub
+
+    Private Sub MyDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MyDataGridView1.CellContentClick
+
     End Sub
 End Class

@@ -23,12 +23,12 @@ Partial Class FrmInvop
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lblQNo = New System.Windows.Forms.Label()
         Me.lblOrderNo = New System.Windows.Forms.Label()
@@ -39,11 +39,16 @@ Partial Class FrmInvop
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtQNo = New HTBook.MyTextBox(Me.components)
+        Me.txtOrderNo = New HTBook.MyTextBox(Me.components)
+        Me.txtChallanNo = New HTBook.MyTextBox(Me.components)
+        Me.txtLrRrNo = New HTBook.MyTextBox(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblInvTYpe = New System.Windows.Forms.Label()
         Me.cmbPartyName = New System.Windows.Forms.ComboBox()
         Me.cmbInvType = New System.Windows.Forms.ComboBox()
         Me.btnAddRow = New System.Windows.Forms.Button()
+        Me.MyTextBox5 = New HTBook.MyTextBox(Me.components)
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnPrint = New System.Windows.Forms.Button()
@@ -51,33 +56,6 @@ Partial Class FrmInvop
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblGAmount = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.chkPerfomaInvoice = New System.Windows.Forms.CheckBox()
-        Me.lblCpoyQNo = New System.Windows.Forms.Label()
-        Me.BtnCopyQuatattion = New System.Windows.Forms.Button()
-        Me.ChkCopyEntry = New System.Windows.Forms.CheckBox()
-        Me.lblLabourDisPer = New System.Windows.Forms.Label()
-        Me.lblLabourDisAmt = New System.Windows.Forms.Label()
-        Me.DtpOrderDate = New System.Windows.Forms.MaskedTextBox()
-        Me.dtpChallanDate = New System.Windows.Forms.MaskedTextBox()
-        Me.dtpLrRrDate = New System.Windows.Forms.MaskedTextBox()
-        Me.DtpQdate = New System.Windows.Forms.MaskedTextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtQNo = New HTBook.MyTextBox(Me.components)
-        Me.txtOrderNo = New HTBook.MyTextBox(Me.components)
-        Me.txtChallanNo = New HTBook.MyTextBox(Me.components)
-        Me.txtLrRrNo = New HTBook.MyTextBox(Me.components)
-        Me.MyTextBox5 = New HTBook.MyTextBox(Me.components)
         Me.MyDataGridView1 = New HTBook.MyDataGridView(Me.components)
         Me.ColInwardDetailId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColInwardId = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -95,21 +73,43 @@ Partial Class FrmInvop
         Me.ColVatAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CapitalAHidden = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtRemark = New HTBook.MyTextBox(Me.components)
+        Me.lblGAmount = New System.Windows.Forms.Label()
         Me.txtGAmount = New HTBook.MyTextBox(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtDiscount = New HTBook.MyTextBox(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtVat4Prct = New HTBook.MyTextBox(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtVAT125Prct = New HTBook.MyTextBox(Me.components)
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtAVat25Prct = New HTBook.MyTextBox(Me.components)
         Me.txtATex1PRct = New HTBook.MyTextBox(Me.components)
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtCST = New HTBook.MyTextBox(Me.components)
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.txtRounfOff = New HTBook.MyTextBox(Me.components)
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtTotalAmount = New HTBook.MyTextBox(Me.components)
         Me.txtNetAmount = New HTBook.MyTextBox(Me.components)
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.MyTextBox6 = New HTBook.MyTextBox(Me.components)
+        Me.chkPerfomaInvoice = New System.Windows.Forms.CheckBox()
+        Me.lblCpoyQNo = New System.Windows.Forms.Label()
         Me.txtCopyQ = New HTBook.MyTextBox(Me.components)
+        Me.BtnCopyQuatattion = New System.Windows.Forms.Button()
+        Me.ChkCopyEntry = New System.Windows.Forms.CheckBox()
+        Me.lblLabourDisPer = New System.Windows.Forms.Label()
+        Me.lblLabourDisAmt = New System.Windows.Forms.Label()
         Me.txtLabourDisPer = New HTBook.MyTextBox(Me.components)
         Me.txtLabourDisAmt = New HTBook.MyTextBox(Me.components)
+        Me.DtpOrderDate = New System.Windows.Forms.MaskedTextBox()
+        Me.dtpChallanDate = New System.Windows.Forms.MaskedTextBox()
+        Me.dtpLrRrDate = New System.Windows.Forms.MaskedTextBox()
+        Me.DtpQdate = New System.Windows.Forms.MaskedTextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.MyDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -296,6 +296,42 @@ Partial Class FrmInvop
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Date :"
         '
+        'txtQNo
+        '
+        Me.txtQNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtQNo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtQNo.Location = New System.Drawing.Point(101, 3)
+        Me.txtQNo.Name = "txtQNo"
+        Me.txtQNo.Size = New System.Drawing.Size(192, 27)
+        Me.txtQNo.TabIndex = 0
+        '
+        'txtOrderNo
+        '
+        Me.txtOrderNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtOrderNo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtOrderNo.Location = New System.Drawing.Point(101, 34)
+        Me.txtOrderNo.Name = "txtOrderNo"
+        Me.txtOrderNo.Size = New System.Drawing.Size(192, 27)
+        Me.txtOrderNo.TabIndex = 2
+        '
+        'txtChallanNo
+        '
+        Me.txtChallanNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtChallanNo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtChallanNo.Location = New System.Drawing.Point(101, 65)
+        Me.txtChallanNo.Name = "txtChallanNo"
+        Me.txtChallanNo.Size = New System.Drawing.Size(192, 27)
+        Me.txtChallanNo.TabIndex = 4
+        '
+        'txtLrRrNo
+        '
+        Me.txtLrRrNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLrRrNo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtLrRrNo.Location = New System.Drawing.Point(101, 96)
+        Me.txtLrRrNo.Name = "txtLrRrNo"
+        Me.txtLrRrNo.Size = New System.Drawing.Size(192, 27)
+        Me.txtLrRrNo.TabIndex = 6
+        '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -350,6 +386,17 @@ Partial Class FrmInvop
         Me.btnAddRow.TabIndex = 13
         Me.btnAddRow.Text = "Add Row"
         Me.btnAddRow.UseVisualStyleBackColor = False
+        '
+        'MyTextBox5
+        '
+        Me.MyTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanel1.SetColumnSpan(Me.MyTextBox5, 2)
+        Me.MyTextBox5.Location = New System.Drawing.Point(535, 3)
+        Me.MyTextBox5.Multiline = True
+        Me.MyTextBox5.Name = "MyTextBox5"
+        Me.TableLayoutPanel1.SetRowSpan(Me.MyTextBox5, 3)
+        Me.MyTextBox5.Size = New System.Drawing.Size(279, 87)
+        Me.MyTextBox5.TabIndex = 11
         '
         'FlowLayoutPanel1
         '
@@ -440,283 +487,19 @@ Partial Class FrmInvop
         Me.Button5.Text = "New"
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 432)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(66, 20)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Remark :"
-        '
-        'lblGAmount
-        '
-        Me.lblGAmount.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblGAmount.AutoSize = True
-        Me.lblGAmount.Location = New System.Drawing.Point(299, 432)
-        Me.lblGAmount.Name = "lblGAmount"
-        Me.lblGAmount.Size = New System.Drawing.Size(64, 20)
-        Me.lblGAmount.TabIndex = 0
-        Me.lblGAmount.Text = "G. Amt. :"
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(535, 432)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(74, 20)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Discount :"
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(299, 463)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(79, 20)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "VAT (4 %) :"
-        '
-        'Label8
-        '
-        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(535, 463)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(88, 20)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "A.Tax (1 %) :"
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(299, 494)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 20)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "VAT (12.5 %) :"
-        '
-        'Label10
-        '
-        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(535, 494)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 20)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "VAT (2.5 %) :"
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(299, 525)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(79, 20)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "CST (2 %) :"
-        '
-        'Label12
-        '
-        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(535, 525)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(106, 20)
-        Me.Label12.TabIndex = 0
-        Me.Label12.Text = "Total Amount :"
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(535, 556)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(106, 20)
-        Me.Label13.TabIndex = 0
-        Me.Label13.Text = "Net Amopunt :"
-        '
-        'Label14
-        '
-        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(299, 556)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(82, 20)
-        Me.Label14.TabIndex = 0
-        Me.Label14.Text = "Round off :"
-        '
-        'chkPerfomaInvoice
-        '
-        Me.chkPerfomaInvoice.AutoSize = True
-        Me.chkPerfomaInvoice.Location = New System.Drawing.Point(1085, 96)
-        Me.chkPerfomaInvoice.Name = "chkPerfomaInvoice"
-        Me.chkPerfomaInvoice.Size = New System.Drawing.Size(124, 24)
-        Me.chkPerfomaInvoice.TabIndex = 10
-        Me.chkPerfomaInvoice.Text = "Perfoma Invoice"
-        Me.chkPerfomaInvoice.UseVisualStyleBackColor = True
-        '
-        'lblCpoyQNo
-        '
-        Me.lblCpoyQNo.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblCpoyQNo.AutoSize = True
-        Me.lblCpoyQNo.Location = New System.Drawing.Point(535, 132)
-        Me.lblCpoyQNo.Name = "lblCpoyQNo"
-        Me.lblCpoyQNo.Size = New System.Drawing.Size(54, 20)
-        Me.lblCpoyQNo.TabIndex = 11
-        Me.lblCpoyQNo.Text = "Q. No :"
-        '
-        'BtnCopyQuatattion
-        '
-        Me.BtnCopyQuatattion.AutoSize = True
-        Me.BtnCopyQuatattion.BackColor = System.Drawing.Color.LemonChiffon
-        Me.BtnCopyQuatattion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCopyQuatattion.Location = New System.Drawing.Point(860, 127)
-        Me.BtnCopyQuatattion.Name = "BtnCopyQuatattion"
-        Me.BtnCopyQuatattion.Size = New System.Drawing.Size(114, 30)
-        Me.BtnCopyQuatattion.TabIndex = 15
-        Me.BtnCopyQuatattion.Text = "Copy Quatation"
-        Me.BtnCopyQuatattion.UseVisualStyleBackColor = False
-        '
-        'ChkCopyEntry
-        '
-        Me.ChkCopyEntry.AutoSize = True
-        Me.ChkCopyEntry.Location = New System.Drawing.Point(101, 554)
-        Me.ChkCopyEntry.Name = "ChkCopyEntry"
-        Me.ChkCopyEntry.Size = New System.Drawing.Size(99, 24)
-        Me.ChkCopyEntry.TabIndex = 26
-        Me.ChkCopyEntry.Text = "Copy Entry"
-        Me.ChkCopyEntry.UseVisualStyleBackColor = True
-        '
-        'lblLabourDisPer
-        '
-        Me.lblLabourDisPer.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lblLabourDisPer.AutoSize = True
-        Me.lblLabourDisPer.Location = New System.Drawing.Point(997, 432)
-        Me.lblLabourDisPer.Name = "lblLabourDisPer"
-        Me.lblLabourDisPer.Size = New System.Drawing.Size(74, 20)
-        Me.lblLabourDisPer.TabIndex = 28
-        Me.lblLabourDisPer.Text = "Lab Dis %"
-        '
-        'lblLabourDisAmt
-        '
-        Me.lblLabourDisAmt.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lblLabourDisAmt.AutoSize = True
-        Me.lblLabourDisAmt.Location = New System.Drawing.Point(989, 463)
-        Me.lblLabourDisAmt.Name = "lblLabourDisAmt"
-        Me.lblLabourDisAmt.Size = New System.Drawing.Size(90, 20)
-        Me.lblLabourDisAmt.TabIndex = 29
-        Me.lblLabourDisAmt.Text = "Lab Dis Amt"
-        '
-        'DtpOrderDate
-        '
-        Me.DtpOrderDate.Location = New System.Drawing.Point(405, 34)
-        Me.DtpOrderDate.Mask = "00/00/0000"
-        Me.DtpOrderDate.Name = "DtpOrderDate"
-        Me.DtpOrderDate.Size = New System.Drawing.Size(124, 27)
-        Me.DtpOrderDate.TabIndex = 3
-        Me.DtpOrderDate.ValidatingType = GetType(Date)
-        '
-        'dtpChallanDate
-        '
-        Me.dtpChallanDate.Location = New System.Drawing.Point(405, 65)
-        Me.dtpChallanDate.Mask = "00/00/0000"
-        Me.dtpChallanDate.Name = "dtpChallanDate"
-        Me.dtpChallanDate.Size = New System.Drawing.Size(124, 27)
-        Me.dtpChallanDate.TabIndex = 5
-        Me.dtpChallanDate.ValidatingType = GetType(Date)
-        '
-        'dtpLrRrDate
-        '
-        Me.dtpLrRrDate.Location = New System.Drawing.Point(405, 96)
-        Me.dtpLrRrDate.Mask = "00/00/0000"
-        Me.dtpLrRrDate.Name = "dtpLrRrDate"
-        Me.dtpLrRrDate.Size = New System.Drawing.Size(124, 27)
-        Me.dtpLrRrDate.TabIndex = 7
-        Me.dtpLrRrDate.ValidatingType = GetType(Date)
-        '
-        'DtpQdate
-        '
-        Me.DtpQdate.Location = New System.Drawing.Point(405, 3)
-        Me.DtpQdate.Mask = "00/00/0000"
-        Me.DtpQdate.Name = "DtpQdate"
-        Me.DtpQdate.Size = New System.Drawing.Size(124, 27)
-        Me.DtpQdate.TabIndex = 1
-        Me.DtpQdate.ValidatingType = GetType(Date)
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Gray
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1212, 3)
-        Me.Panel1.TabIndex = 1
-        '
-        'txtQNo
-        '
-        Me.txtQNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtQNo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtQNo.Location = New System.Drawing.Point(101, 3)
-        Me.txtQNo.Name = "txtQNo"
-        Me.txtQNo.Size = New System.Drawing.Size(192, 27)
-        Me.txtQNo.TabIndex = 0
-        '
-        'txtOrderNo
-        '
-        Me.txtOrderNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtOrderNo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtOrderNo.Location = New System.Drawing.Point(101, 34)
-        Me.txtOrderNo.Name = "txtOrderNo"
-        Me.txtOrderNo.Size = New System.Drawing.Size(192, 27)
-        Me.txtOrderNo.TabIndex = 2
-        '
-        'txtChallanNo
-        '
-        Me.txtChallanNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtChallanNo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtChallanNo.Location = New System.Drawing.Point(101, 65)
-        Me.txtChallanNo.Name = "txtChallanNo"
-        Me.txtChallanNo.Size = New System.Drawing.Size(192, 27)
-        Me.txtChallanNo.TabIndex = 4
-        '
-        'txtLrRrNo
-        '
-        Me.txtLrRrNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLrRrNo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtLrRrNo.Location = New System.Drawing.Point(101, 96)
-        Me.txtLrRrNo.Name = "txtLrRrNo"
-        Me.txtLrRrNo.Size = New System.Drawing.Size(192, 27)
-        Me.txtLrRrNo.TabIndex = 6
-        '
-        'MyTextBox5
-        '
-        Me.MyTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TableLayoutPanel1.SetColumnSpan(Me.MyTextBox5, 2)
-        Me.MyTextBox5.Location = New System.Drawing.Point(535, 3)
-        Me.MyTextBox5.Multiline = True
-        Me.MyTextBox5.Name = "MyTextBox5"
-        Me.TableLayoutPanel1.SetRowSpan(Me.MyTextBox5, 3)
-        Me.MyTextBox5.Size = New System.Drawing.Size(279, 87)
-        Me.MyTextBox5.TabIndex = 11
-        '
         'MyDataGridView1
         '
         Me.MyDataGridView1.AllowUserToAddRows = False
         Me.MyDataGridView1.AllowUserToDeleteRows = False
         Me.MyDataGridView1.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MyDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MyDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MyDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MyDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColInwardDetailId, Me.ColInwardId, Me.ColItemId, Me.COlCapitalA, Me.ColDigital1, Me.Colsmalla, Me.ColItemRemark, Me.ColUnit, Me.ColQty, Me.ColRate, Me.ColDis, Me.ColDisAmount, Me.ColVatper, Me.ColVatAmount, Me.ColAmount, Me.CapitalAHidden})
         Me.TableLayoutPanel1.SetColumnSpan(Me.MyDataGridView1, 10)
@@ -786,27 +569,27 @@ Partial Class FrmInvop
         'ColQty
         '
         Me.ColQty.DataPropertyName = "Qty"
-        DataGridViewCellStyle14.Format = "N2"
-        Me.ColQty.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Format = "N2"
+        Me.ColQty.DefaultCellStyle = DataGridViewCellStyle2
         Me.ColQty.HeaderText = "Qty"
         Me.ColQty.Name = "ColQty"
         '
         'ColRate
         '
         Me.ColRate.DataPropertyName = "Rate"
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle15.Format = "N2"
-        DataGridViewCellStyle15.NullValue = Nothing
-        Me.ColRate.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.ColRate.DefaultCellStyle = DataGridViewCellStyle3
         Me.ColRate.HeaderText = "Rate"
         Me.ColRate.Name = "ColRate"
         '
         'ColDis
         '
         Me.ColDis.DataPropertyName = "Dis"
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle16.Format = "N2"
-        Me.ColDis.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        Me.ColDis.DefaultCellStyle = DataGridViewCellStyle4
         Me.ColDis.HeaderText = "Dis"
         Me.ColDis.Name = "ColDis"
         '
@@ -821,9 +604,9 @@ Partial Class FrmInvop
         'ColVatper
         '
         Me.ColVatper.DataPropertyName = "Vatper"
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle17.Format = "N2"
-        Me.ColVatper.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        Me.ColVatper.DefaultCellStyle = DataGridViewCellStyle5
         Me.ColVatper.HeaderText = "Vat %"
         Me.ColVatper.Name = "ColVatper"
         '
@@ -837,9 +620,9 @@ Partial Class FrmInvop
         'ColAmount
         '
         Me.ColAmount.DataPropertyName = "Amount"
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle18.Format = "N2"
-        Me.ColAmount.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N2"
+        Me.ColAmount.DefaultCellStyle = DataGridViewCellStyle6
         Me.ColAmount.HeaderText = "Amount"
         Me.ColAmount.Name = "ColAmount"
         Me.ColAmount.ReadOnly = True
@@ -850,6 +633,16 @@ Partial Class FrmInvop
         Me.CapitalAHidden.HeaderText = "CapitalAHidden"
         Me.CapitalAHidden.Name = "CapitalAHidden"
         Me.CapitalAHidden.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 432)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(66, 20)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Remark :"
         '
         'txtRemark
         '
@@ -862,6 +655,16 @@ Partial Class FrmInvop
         Me.txtRemark.Size = New System.Drawing.Size(192, 87)
         Me.txtRemark.TabIndex = 25
         '
+        'lblGAmount
+        '
+        Me.lblGAmount.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblGAmount.AutoSize = True
+        Me.lblGAmount.Location = New System.Drawing.Point(299, 432)
+        Me.lblGAmount.Name = "lblGAmount"
+        Me.lblGAmount.Size = New System.Drawing.Size(64, 20)
+        Me.lblGAmount.TabIndex = 0
+        Me.lblGAmount.Text = "G. Amt. :"
+        '
         'txtGAmount
         '
         Me.txtGAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -871,6 +674,16 @@ Partial Class FrmInvop
         Me.txtGAmount.ReadOnly = True
         Me.txtGAmount.Size = New System.Drawing.Size(124, 27)
         Me.txtGAmount.TabIndex = 15
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(535, 432)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 20)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Discount :"
         '
         'txtDiscount
         '
@@ -884,6 +697,16 @@ Partial Class FrmInvop
         Me.txtDiscount.Size = New System.Drawing.Size(130, 27)
         Me.txtDiscount.TabIndex = 16
         '
+        'Label7
+        '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(299, 463)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(79, 20)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "VAT (4 %) :"
+        '
         'TxtVat4Prct
         '
         Me.TxtVat4Prct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -894,6 +717,26 @@ Partial Class FrmInvop
         Me.TxtVat4Prct.Size = New System.Drawing.Size(124, 27)
         Me.TxtVat4Prct.TabIndex = 17
         '
+        'Label8
+        '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(535, 463)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(88, 20)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "A.Tax (1 %) :"
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(299, 494)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(98, 20)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "VAT (12.5 %) :"
+        '
         'txtVAT125Prct
         '
         Me.txtVAT125Prct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -903,6 +746,16 @@ Partial Class FrmInvop
         Me.txtVAT125Prct.ReadOnly = True
         Me.txtVAT125Prct.Size = New System.Drawing.Size(124, 27)
         Me.txtVAT125Prct.TabIndex = 19
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(535, 494)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 20)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "VAT (2.5 %) :"
         '
         'txtAVat25Prct
         '
@@ -928,6 +781,16 @@ Partial Class FrmInvop
         Me.txtATex1PRct.Size = New System.Drawing.Size(130, 27)
         Me.txtATex1PRct.TabIndex = 18
         '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(299, 525)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(79, 20)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "CST (2 %) :"
+        '
         'txtCST
         '
         Me.txtCST.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -938,6 +801,16 @@ Partial Class FrmInvop
         Me.txtCST.Size = New System.Drawing.Size(124, 27)
         Me.txtCST.TabIndex = 21
         '
+        'Label12
+        '
+        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(535, 525)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(106, 20)
+        Me.Label12.TabIndex = 0
+        Me.Label12.Text = "Total Amount :"
+        '
         'txtRounfOff
         '
         Me.txtRounfOff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -947,6 +820,16 @@ Partial Class FrmInvop
         Me.txtRounfOff.ReadOnly = True
         Me.txtRounfOff.Size = New System.Drawing.Size(124, 27)
         Me.txtRounfOff.TabIndex = 23
+        '
+        'Label13
+        '
+        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(535, 556)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(106, 20)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "Net Amopunt :"
         '
         'txtTotalAmount
         '
@@ -972,6 +855,16 @@ Partial Class FrmInvop
         Me.txtNetAmount.Size = New System.Drawing.Size(130, 27)
         Me.txtNetAmount.TabIndex = 24
         '
+        'Label14
+        '
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(299, 556)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(82, 20)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "Round off :"
+        '
         'MyTextBox6
         '
         Me.MyTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -984,6 +877,26 @@ Partial Class FrmInvop
         Me.MyTextBox6.TabIndex = 101
         Me.MyTextBox6.TabStop = False
         '
+        'chkPerfomaInvoice
+        '
+        Me.chkPerfomaInvoice.AutoSize = True
+        Me.chkPerfomaInvoice.Location = New System.Drawing.Point(1085, 96)
+        Me.chkPerfomaInvoice.Name = "chkPerfomaInvoice"
+        Me.chkPerfomaInvoice.Size = New System.Drawing.Size(124, 24)
+        Me.chkPerfomaInvoice.TabIndex = 10
+        Me.chkPerfomaInvoice.Text = "Perfoma Invoice"
+        Me.chkPerfomaInvoice.UseVisualStyleBackColor = True
+        '
+        'lblCpoyQNo
+        '
+        Me.lblCpoyQNo.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblCpoyQNo.AutoSize = True
+        Me.lblCpoyQNo.Location = New System.Drawing.Point(535, 132)
+        Me.lblCpoyQNo.Name = "lblCpoyQNo"
+        Me.lblCpoyQNo.Size = New System.Drawing.Size(54, 20)
+        Me.lblCpoyQNo.TabIndex = 11
+        Me.lblCpoyQNo.Text = "Q. No :"
+        '
         'txtCopyQ
         '
         Me.txtCopyQ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -992,6 +905,48 @@ Partial Class FrmInvop
         Me.txtCopyQ.Name = "txtCopyQ"
         Me.txtCopyQ.Size = New System.Drawing.Size(207, 27)
         Me.txtCopyQ.TabIndex = 14
+        '
+        'BtnCopyQuatattion
+        '
+        Me.BtnCopyQuatattion.AutoSize = True
+        Me.BtnCopyQuatattion.BackColor = System.Drawing.Color.LemonChiffon
+        Me.BtnCopyQuatattion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCopyQuatattion.Location = New System.Drawing.Point(860, 127)
+        Me.BtnCopyQuatattion.Name = "BtnCopyQuatattion"
+        Me.BtnCopyQuatattion.Size = New System.Drawing.Size(114, 30)
+        Me.BtnCopyQuatattion.TabIndex = 15
+        Me.BtnCopyQuatattion.Text = "Copy Quatation"
+        Me.BtnCopyQuatattion.UseVisualStyleBackColor = False
+        '
+        'ChkCopyEntry
+        '
+        Me.ChkCopyEntry.AutoSize = True
+        Me.ChkCopyEntry.Location = New System.Drawing.Point(101, 554)
+        Me.ChkCopyEntry.Name = "ChkCopyEntry"
+        Me.ChkCopyEntry.Size = New System.Drawing.Size(99, 24)
+        Me.ChkCopyEntry.TabIndex = 26
+        Me.ChkCopyEntry.Text = "Copy Entry"
+        Me.ChkCopyEntry.UseVisualStyleBackColor = True
+        '
+        'lblLabourDisPer
+        '
+        Me.lblLabourDisPer.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblLabourDisPer.AutoSize = True
+        Me.lblLabourDisPer.Location = New System.Drawing.Point(997, 432)
+        Me.lblLabourDisPer.Name = "lblLabourDisPer"
+        Me.lblLabourDisPer.Size = New System.Drawing.Size(74, 20)
+        Me.lblLabourDisPer.TabIndex = 28
+        Me.lblLabourDisPer.Text = "Lab Dis %"
+        '
+        'lblLabourDisAmt
+        '
+        Me.lblLabourDisAmt.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblLabourDisAmt.AutoSize = True
+        Me.lblLabourDisAmt.Location = New System.Drawing.Point(989, 463)
+        Me.lblLabourDisAmt.Name = "lblLabourDisAmt"
+        Me.lblLabourDisAmt.Size = New System.Drawing.Size(90, 20)
+        Me.lblLabourDisAmt.TabIndex = 29
+        Me.lblLabourDisAmt.Text = "Lab Dis Amt"
         '
         'txtLabourDisPer
         '
@@ -1009,6 +964,51 @@ Partial Class FrmInvop
         Me.txtLabourDisAmt.ReadOnly = True
         Me.txtLabourDisAmt.Size = New System.Drawing.Size(122, 27)
         Me.txtLabourDisAmt.TabIndex = 31
+        '
+        'DtpOrderDate
+        '
+        Me.DtpOrderDate.Location = New System.Drawing.Point(405, 34)
+        Me.DtpOrderDate.Mask = "00/00/0000"
+        Me.DtpOrderDate.Name = "DtpOrderDate"
+        Me.DtpOrderDate.Size = New System.Drawing.Size(124, 27)
+        Me.DtpOrderDate.TabIndex = 3
+        Me.DtpOrderDate.ValidatingType = GetType(Date)
+        '
+        'dtpChallanDate
+        '
+        Me.dtpChallanDate.Location = New System.Drawing.Point(405, 65)
+        Me.dtpChallanDate.Mask = "00/00/0000"
+        Me.dtpChallanDate.Name = "dtpChallanDate"
+        Me.dtpChallanDate.Size = New System.Drawing.Size(124, 27)
+        Me.dtpChallanDate.TabIndex = 5
+        Me.dtpChallanDate.ValidatingType = GetType(Date)
+        '
+        'dtpLrRrDate
+        '
+        Me.dtpLrRrDate.Location = New System.Drawing.Point(405, 96)
+        Me.dtpLrRrDate.Mask = "00/00/0000"
+        Me.dtpLrRrDate.Name = "dtpLrRrDate"
+        Me.dtpLrRrDate.Size = New System.Drawing.Size(124, 27)
+        Me.dtpLrRrDate.TabIndex = 7
+        Me.dtpLrRrDate.ValidatingType = GetType(Date)
+        '
+        'DtpQdate
+        '
+        Me.DtpQdate.Location = New System.Drawing.Point(405, 3)
+        Me.DtpQdate.Mask = "00/00/0000"
+        Me.DtpQdate.Name = "DtpQdate"
+        Me.DtpQdate.Size = New System.Drawing.Size(124, 27)
+        Me.DtpQdate.TabIndex = 1
+        Me.DtpQdate.ValidatingType = GetType(Date)
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1212, 3)
+        Me.Panel1.TabIndex = 1
         '
         'FrmInvop
         '

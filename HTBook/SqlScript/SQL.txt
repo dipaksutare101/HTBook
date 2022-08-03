@@ -1,4 +1,166 @@
-﻿23-04-2022 Script
+﻿-------------------------------3-8-22--------------
+alter table Inward
+add SupplyPrintPer numeric(18,2) NULL default(0)
+
+Go
+
+alter table Inward
+add LabourPrintPer numeric(18,2) NULL default(0)
+ 
+GO
+/****** Object:  StoredProcedure [dbo].[Ins_Inward]    Script Date: 3/8/2022 9:40:56 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure [dbo].[Ins_Inward]
+@InwardID int,
+@PartyId int,
+@InwardDate datetime,
+@CenterId int,
+@BillNo varchar(50),
+@LHSNCode nvarchar(MAX),
+@LabourPrintPer money,
+@SupplyPrintPer money,
+@Remark nvarchar(MAX),
+@AmountAdd int,
+@AmountLess int,
+@Total Numeric(18,2),
+@Paid int,
+@PaidRemark nvarchar(MAX),
+@OrderNo varchar(50),
+@OrderDate datetime,
+@ChallanNo nvarchar(max),
+@ChallanDate datetime,
+@LRNo varchar(50),
+@LRDate datetime,
+@VatPerFour numeric(18,2),
+@VatFourAmont numeric(18,2),
+@ATaxOne numeric(18,2),
+@ATaxOneAmount numeric(18,2),
+@VatPerTwelveFive numeric(18,2),
+@VatPerTwelveFiveAmount numeric(18,2),
+@ATaxTwoFive numeric(18,2),
+@ATaxTwoFiveAmount numeric(18,2),
+@TotalAmont numeric(18,2),
+@DisFive numeric(18,2),
+@DisFiveAmount numeric(18,2),
+@NetAmont numeric(18,2),
+@CstTwoPer numeric(18,2),
+@CstTwoPerAmount numeric(18,2),
+@Roundoff numeric(18,2),
+@DetailDiscount numeric(18,2),
+@isQuatation bit,
+@InvoiceType varchar(50),
+@Action AS smallint,
+@GSTNo varchar(50), 
+@SGST5 numeric(18,2), 
+@SGST12 numeric(18,2), 
+@SGST18 numeric(18,2), 
+@SGST28 numeric(18,2),	
+@CGST5 numeric(18,2), 
+@CGST12 numeric(18,2), 
+@CGST18 numeric(18,2), 
+@CGST28 numeric(18,2), 
+@IGST5 numeric(18,2), 
+@IGST12 numeric(18,2), 
+@IGST18 numeric(18,2), 
+@IGST28 numeric(18,2),
+@StateCode int
+,@IwdDetails As ins_InwardDetails READONLY
+AS
+BEGIN
+SET NOCOUNT ON;
+
+	BEGIN TRANSACTION;
+
+	BEGIN TRY
+		
+		IF @Action = 1 
+			BEGIN
+				INSERT INTO dbo.Inward
+				(
+					PartyId, InwardDate, BillNo,LHSNCode,SupplyPrintPer,LabourPrintPer ,Remark, AmountAdd, AmountLess, Total, Paid, PaidRemark, OrderNo,
+					OrderDate, ChallanNo, ChallanDate, LRNo, LRDate, VatPerFour, VatFourAmont, ATaxOne, ATaxOneAmount, 
+					VatPerTwelveFive, VatPerTwelveFiveAmount, ATaxTwoFive, ATaxTwoFiveAmount, TotalAmont, DisFive, DisFiveAmount,
+					NetAmont, CstTwoPer, CstTwoPerAmount, Roundoff, DetailDiscount, isQuatation, InvoiceType,
+					GSTNo, SGST5, SGST12, SGST18, SGST28,	CGST5, CGST12, CGST18, CGST28, IGST5, IGST12, IGST18, IGST28, StateCode
+				)
+				VALUES
+				(
+					@PartyId, @InwardDate, @BillNo,@LHSNCode,@SupplyPrintPer,@LabourPrintPer, @Remark, @AmountAdd, @AmountLess, @Total, @Paid, @PaidRemark, @OrderNo,
+					@OrderDate, @ChallanNo, @ChallanDate, @LRNo, @LRDate, @VatPerFour, @VatFourAmont, @ATaxOne, @ATaxOneAmount, 
+					@VatPerTwelveFive, @VatPerTwelveFiveAmount, @ATaxTwoFive, @ATaxTwoFiveAmount, @TotalAmont, @DisFive, @DisFiveAmount,
+					@NetAmont, @CstTwoPer, @CstTwoPerAmount, @Roundoff, @DetailDiscount, @isQuatation, @InvoiceType,
+					@GSTNo, @SGST5, @SGST12, @SGST18, @SGST28,	@CGST5, @CGST12, @CGST18, @CGST28, @IGST5, @IGST12, @IGST18, @IGST28, @StateCode
+				)
+				SET @InwardID = SCOPE_IDENTITY ()
+				
+				INSERT into dbo.InwardDetail
+				(
+					InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate ,Dis, DisAmount, Vatper, VatAmount, Amount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden  	
+				)
+				SELECT 
+					@InwardID, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate ,Dis, DisAmount, Vatper, VatAmount, Amount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden
+				FROM @IwdDetails
+				
+				Select @InwardID InwardId
+
+			END
+
+		IF @Action = 2
+			BEGIN
+				UPDATE dbo.Inward SET
+					PartyId = @PartyId, InwardDate = @InwardDate,  BillNo = @BillNo,LHSNCode=@LHSNCode,LabourPrintPer=@LabourPrintPer,@SupplyPrintPer=SupplyPrintPer, Remark = @Remark, AmountAdd = @AmountAdd, 
+					AmountLess = @AmountLess, Total = @Total, Paid = @Paid, PaidRemark = @PaidRemark, OrderNo = @OrderNo, OrderDate = @OrderDate, 
+					ChallanNo = @ChallanNo, ChallanDate = @ChallanDate, LRNo = @LRNo, LRDate = @LRDate, VatPerFour = @VatPerFour, VatFourAmont = @VatFourAmont, 
+					ATaxOne = @ATaxOne, ATaxOneAmount = @ATaxOneAmount,	VatPerTwelveFive = @VatPerTwelveFive, VatPerTwelveFiveAmount = @VatPerTwelveFiveAmount, 
+					ATaxTwoFive = @ATaxTwoFive, ATaxTwoFiveAmount = @ATaxTwoFiveAmount, TotalAmont = @TotalAmont, DisFive = @DisFive, 
+					DisFiveAmount = @DisFiveAmount, NetAmont = @NetAmont, CstTwoPer = @CstTwoPer, CstTwoPerAmount = @CstTwoPerAmount, Roundoff = @Roundoff, 
+					DetailDiscount = @DetailDiscount, isQuatation = @isQuatation, InvoiceType = @InvoiceType,
+					GSTNo = @GSTNo, SGST5 = @SGST5, SGST12 = @SGST12, SGST18 = @SGST18, SGST28 = @SGST28,
+					CGST5 = @CGST5, CGST12 = @CGST12, CGST18 = @CGST18, CGST28 = @CGST28, 
+					IGST5 = @IGST5, IGST12 = @IGST12, IGST18 = @IGST18, IGST28 = @IGST28,
+					StateCode = @StateCode
+				WHERE InwardId = @InwardID
+			
+				Delete From InwardDetail WHere InwardId = @InwardID 
+				INSERT into dbo.InwardDetail
+				(
+					InwardId, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate, Amount, Vatper, VatAmount ,Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden	
+				)
+				SELECT 
+					@InwardID, ItemId, CapitalA, Digital1, smalla, ItemRemark, HSNCode, 
+					Unit, Qty, Rate, Amount, Vatper, VatAmount ,Dis, DisAmount,iRate, iDis,iDisAmount,iVatper,iVatAmount,iAmount, CapitalAHidden
+				FROM @IwdDetails
+				
+				Select @InwardID InwardId
+				
+			END
+
+
+	END TRY
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0  
+			ROLLBACK TRANSACTION;
+	    
+		Select 0 InwardId
+	    
+	END CATCH
+
+	IF @@TRANCOUNT > 0  
+		COMMIT TRANSACTION; 
+
+
+END
+ 
+---------------------------End--------
+
+
+23-04-2022 Script
 
 BANK: INDUSIND BANK LTD
 BRANCH: RING ROAD,SURAT.
