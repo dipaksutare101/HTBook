@@ -7,8 +7,9 @@ Go
 alter table Inward
 add LabourPrintPer numeric(18,2) NULL default(0)
  
+ 
 GO
-/****** Object:  StoredProcedure [dbo].[Ins_Inward]    Script Date: 3/8/2022 9:40:56 AM ******/
+/****** Object:  StoredProcedure [dbo].[Ins_Inward]    Script Date: 3/8/2022 1:39:06 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -20,8 +21,8 @@ ALTER Procedure [dbo].[Ins_Inward]
 @CenterId int,
 @BillNo varchar(50),
 @LHSNCode nvarchar(MAX),
-@LabourPrintPer money,
-@SupplyPrintPer money,
+@LabourPrintPer numeric(18,2),
+@SupplyPrintPer numeric(18,2),
 @Remark nvarchar(MAX),
 @AmountAdd int,
 @AmountLess int,
@@ -113,7 +114,7 @@ SET NOCOUNT ON;
 		IF @Action = 2
 			BEGIN
 				UPDATE dbo.Inward SET
-					PartyId = @PartyId, InwardDate = @InwardDate,  BillNo = @BillNo,LHSNCode=@LHSNCode,LabourPrintPer=@LabourPrintPer,@SupplyPrintPer=SupplyPrintPer, Remark = @Remark, AmountAdd = @AmountAdd, 
+					PartyId = @PartyId, InwardDate = @InwardDate,  BillNo = @BillNo,LHSNCode=@LHSNCode,LabourPrintPer=@LabourPrintPer,SupplyPrintPer=@SupplyPrintPer, Remark = @Remark, AmountAdd = @AmountAdd, 
 					AmountLess = @AmountLess, Total = @Total, Paid = @Paid, PaidRemark = @PaidRemark, OrderNo = @OrderNo, OrderDate = @OrderDate, 
 					ChallanNo = @ChallanNo, ChallanDate = @ChallanDate, LRNo = @LRNo, LRDate = @LRDate, VatPerFour = @VatPerFour, VatFourAmont = @VatFourAmont, 
 					ATaxOne = @ATaxOne, ATaxOneAmount = @ATaxOneAmount,	VatPerTwelveFive = @VatPerTwelveFive, VatPerTwelveFiveAmount = @VatPerTwelveFiveAmount, 
