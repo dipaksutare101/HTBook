@@ -83,6 +83,10 @@ Partial Class FrmInvoiceGST
         Me.cmbInvType = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.pnlHeader = New System.Windows.Forms.Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.txtLabPrintPer = New HTBook.MyTextBox(Me.components)
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.txtSupplyPrintPer = New HTBook.MyTextBox(Me.components)
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtLHSNCode = New HTBook.MyTextBox(Me.components)
         Me.dtpQDate = New System.Windows.Forms.MaskedTextBox()
@@ -143,10 +147,7 @@ Partial Class FrmInvoiceGST
         Me.txtGAmt = New HTBook.MyTextBox(Me.components)
         Me.txtSGST5 = New HTBook.MyTextBox(Me.components)
         Me.txtSGST12 = New HTBook.MyTextBox(Me.components)
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.txtSupplyPrintPer = New HTBook.MyTextBox(Me.components)
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.txtLabPrintPer = New HTBook.MyTextBox(Me.components)
+        Me.MyLabel1 = New HTBook.MyLabel(Me.components)
         Me.pnlFooterButton.SuspendLayout()
         Me.pnlDetails.SuspendLayout()
         CType(Me.MyDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -620,6 +621,7 @@ Partial Class FrmInvoiceGST
         '
         'pnlHeader
         '
+        Me.pnlHeader.Controls.Add(Me.MyLabel1)
         Me.pnlHeader.Controls.Add(Me.Label29)
         Me.pnlHeader.Controls.Add(Me.txtLabPrintPer)
         Me.pnlHeader.Controls.Add(Me.Label28)
@@ -663,6 +665,44 @@ Partial Class FrmInvoiceGST
         Me.pnlHeader.Name = "pnlHeader"
         Me.pnlHeader.Size = New System.Drawing.Size(1362, 188)
         Me.pnlHeader.TabIndex = 1
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(1295, 103)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(68, 16)
+        Me.Label29.TabIndex = 85
+        Me.Label29.Text = "Lab.Dis%"
+        '
+        'txtLabPrintPer
+        '
+        Me.txtLabPrintPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLabPrintPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLabPrintPer.Location = New System.Drawing.Point(1369, 98)
+        Me.txtLabPrintPer.Name = "txtLabPrintPer"
+        Me.txtLabPrintPer.Size = New System.Drawing.Size(63, 23)
+        Me.txtLabPrintPer.TabIndex = 86
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(1131, 104)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(89, 16)
+        Me.Label28.TabIndex = 83
+        Me.Label28.Text = "Supply Dis%"
+        '
+        'txtSupplyPrintPer
+        '
+        Me.txtSupplyPrintPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSupplyPrintPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSupplyPrintPer.Location = New System.Drawing.Point(1226, 101)
+        Me.txtSupplyPrintPer.Name = "txtSupplyPrintPer"
+        Me.txtSupplyPrintPer.Size = New System.Drawing.Size(63, 23)
+        Me.txtSupplyPrintPer.TabIndex = 84
         '
         'Label12
         '
@@ -1325,43 +1365,16 @@ Partial Class FrmInvoiceGST
         Me.txtSGST12.TabStop = False
         Me.txtSGST12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label28
+        'MyLabel1
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(1131, 104)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(89, 16)
-        Me.Label28.TabIndex = 83
-        Me.Label28.Text = "Supply Dis%"
-        '
-        'txtSupplyPrintPer
-        '
-        Me.txtSupplyPrintPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSupplyPrintPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSupplyPrintPer.Location = New System.Drawing.Point(1226, 101)
-        Me.txtSupplyPrintPer.Name = "txtSupplyPrintPer"
-        Me.txtSupplyPrintPer.Size = New System.Drawing.Size(63, 23)
-        Me.txtSupplyPrintPer.TabIndex = 84
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(1295, 103)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(68, 16)
-        Me.Label29.TabIndex = 85
-        Me.Label29.Text = "Lab.Dis%"
-        '
-        'txtLabPrintPer
-        '
-        Me.txtLabPrintPer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLabPrintPer.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLabPrintPer.Location = New System.Drawing.Point(1369, 98)
-        Me.txtLabPrintPer.Name = "txtLabPrintPer"
-        Me.txtLabPrintPer.Size = New System.Drawing.Size(63, 23)
-        Me.txtLabPrintPer.TabIndex = 86
+        Me.MyLabel1.AutoSize = True
+        Me.MyLabel1.BackColor = System.Drawing.Color.Red
+        Me.MyLabel1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.MyLabel1.Location = New System.Drawing.Point(1284, 14)
+        Me.MyLabel1.Name = "MyLabel1"
+        Me.MyLabel1.Size = New System.Drawing.Size(83, 14)
+        Me.MyLabel1.TabIndex = 87
+        Me.MyLabel1.Text = "New Parekh"
         '
         'FrmInvoiceGST
         '
@@ -1503,4 +1516,5 @@ Partial Class FrmInvoiceGST
     Friend WithEvents txtLabPrintPer As MyTextBox
     Friend WithEvents Label28 As Label
     Friend WithEvents txtSupplyPrintPer As MyTextBox
+    Friend WithEvents MyLabel1 As MyLabel
 End Class
