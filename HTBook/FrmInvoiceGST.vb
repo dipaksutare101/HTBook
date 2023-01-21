@@ -429,7 +429,7 @@ err_h:
                         crParameterDiscreteValue1.Value = cmbInvType.Text
                     End If
                 Else
-                    crParameterDiscreteValue1.Value = "QUATATION / ESTIMATE"
+                    crParameterDiscreteValue1.Value = "QUOTATION / ESTIMATE"
                 End If
 
                 crParameterFieldDefinition1 = crParameterFieldDefinitions("invType")
