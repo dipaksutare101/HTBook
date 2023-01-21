@@ -422,14 +422,28 @@ err_h:
                 Dim crParameterDiscreteValue1 As New ParameterDiscreteValue()
 
                 If (isQuatation = False) Then
-
-                    If (chkPerformaInvoice.Checked = True) Then
-                        crParameterDiscreteValue1.Value = "PERFORMA INVOICE"
+                    If (chkRevised.Checked = True) Then
+                        If (chkPerformaInvoice.Checked = True) Then
+                            crParameterDiscreteValue1.Value = "REVISED PERFORMA INVOICE"
+                        Else
+                            crParameterDiscreteValue1.Value = "REVISED " + cmbInvType.Text
+                        End If
                     Else
-                        crParameterDiscreteValue1.Value = cmbInvType.Text
+                        If (chkPerformaInvoice.Checked = True) Then
+                            crParameterDiscreteValue1.Value = "PERFORMA INVOICE"
+                        Else
+                            crParameterDiscreteValue1.Value = cmbInvType.Text
+                        End If
+
                     End If
+
                 Else
-                    crParameterDiscreteValue1.Value = "QUOTATION / ESTIMATE"
+                    If (chkRevised.Checked = True) Then
+                        crParameterDiscreteValue1.Value = "REVISED QUOTATION / ESTIMATE"
+                    Else
+                        crParameterDiscreteValue1.Value = "QUOTATION / ESTIMATE"
+                    End If
+
                 End If
 
                 crParameterFieldDefinition1 = crParameterFieldDefinitions("invType")
