@@ -363,10 +363,10 @@ err_h:
                 FrmReportViewer.Show()
             Else
                 Dim RD As New ReportDocument()
-                Dim path As String = Application.StartupPath & "\InvNew.rpt"
+                Dim path As String = Application.StartupPath & "\InvNew_PMMotors.rpt"
 
                 If cmbInvType.Text.Contains("QUATATION") Then
-                    path = Application.StartupPath & "\QuotationNew.rpt"
+                    path = Application.StartupPath & "\QuotationNew_PM_Motors.rpt"
                 End If
 
                 RD.Load(path)
