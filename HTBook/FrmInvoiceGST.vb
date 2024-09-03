@@ -352,15 +352,43 @@ err_h:
                 Dim crParameterValues1 As New ParameterValues()
                 Dim crParameterDiscreteValue1 As New ParameterDiscreteValue()
 
+                'If (isQuatation = False) Then
+                '    If (chkPerformaInvoice.Checked = True) Then
+                '        crParameterDiscreteValue1.Value = "PERFORMA INVOICE"
+                '    Else
+                '        crParameterDiscreteValue1.Value = "LABOUR / CONSULTING INVOICE"
+                '    End If
+                'Else
+                '    crParameterDiscreteValue1.Value = "LABOUR WORK ESTIMATE"
+                'End If
+
+
                 If (isQuatation = False) Then
-                    If (chkPerformaInvoice.Checked = True) Then
-                        crParameterDiscreteValue1.Value = "PERFORMA INVOICE"
+                    If (chkRevised.Checked = True) Then
+                        If (chkPerformaInvoice.Checked = True) Then
+                            crParameterDiscreteValue1.Value = "REVISED PERFORMA INVOICE"
+                        Else
+                            crParameterDiscreteValue1.Value = "REVISED LABOUR / CONSULTING INVOICE"
+                        End If
                     Else
-                        crParameterDiscreteValue1.Value = "LABOUR / CONSULTING INVOICE"
+                        If (chkPerformaInvoice.Checked = True) Then
+                            crParameterDiscreteValue1.Value = "PERFORMA INVOICE"
+                        Else
+                            crParameterDiscreteValue1.Value = "LABOUR / CONSULTING INVOICE"
+                        End If
+
                     End If
+
                 Else
-                    crParameterDiscreteValue1.Value = "LABOUR WORK ESTIMATE"
+                    If (chkRevised.Checked = True) Then
+                        crParameterDiscreteValue1.Value = "REVISED LABOUR WORK ESTIMATE"
+                    Else
+                        crParameterDiscreteValue1.Value = "LABOUR WORK ESTIMATE"
+                    End If
+
                 End If
+
+
                 crParameterFieldDefinition1 = crParameterFieldDefinitions("invType")
                 crParameterValues1 = crParameterFieldDefinition1.CurrentValues
 
