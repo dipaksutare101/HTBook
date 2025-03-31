@@ -367,8 +367,17 @@ err_h:
                     If (chkRevised.Checked = True) Then
                         If (chkPerformaInvoice.Checked = True) Then
                             crParameterDiscreteValue1.Value = "REVISED PERFORMA INVOICE"
+
+                            If Not String.IsNullOrEmpty(txtReviseNumber.Text) And Not IsNumeric(txtReviseNumber.Text) Then
+                                crParameterDiscreteValue1.Value = txtReviseNumber.Text + " REVISED PERFORMA INVOICE "
+                            End If
                         Else
                             crParameterDiscreteValue1.Value = "REVISED LABOUR / CONSULTING INVOICE"
+
+                            If Not String.IsNullOrEmpty(txtReviseNumber.Text) And Not IsNumeric(txtReviseNumber.Text) Then
+                                crParameterDiscreteValue1.Value = txtReviseNumber.Text + " REVISED LABOUR / CONSULTING INVOICE "
+                            End If
+
                         End If
                     Else
                         If (chkPerformaInvoice.Checked = True) Then
@@ -382,6 +391,10 @@ err_h:
                 Else
                     If (chkRevised.Checked = True) Then
                         crParameterDiscreteValue1.Value = "REVISED LABOUR WORK ESTIMATE"
+
+                        If Not String.IsNullOrEmpty(txtReviseNumber.Text) And Not IsNumeric(txtReviseNumber.Text) Then
+                            crParameterDiscreteValue1.Value = txtReviseNumber.Text + " REVISED LABOUR WORK ESTIMATE "
+                        End If
                     Else
                         crParameterDiscreteValue1.Value = "LABOUR WORK ESTIMATE"
                     End If
@@ -453,6 +466,10 @@ err_h:
                     If (chkRevised.Checked = True) Then
                         If (chkPerformaInvoice.Checked = True) Then
                             crParameterDiscreteValue1.Value = "REVISED PERFORMA INVOICE"
+
+                            If Not String.IsNullOrEmpty(txtReviseNumber.Text) And Not IsNumeric(txtReviseNumber.Text) Then
+                                crParameterDiscreteValue1.Value = txtReviseNumber.Text + " REVISED PERFORMA INVOICE "
+                            End If
                         Else
                             crParameterDiscreteValue1.Value = "REVISED " + cmbInvType.Text
                         End If
@@ -468,8 +485,13 @@ err_h:
                 Else
                     If (chkRevised.Checked = True) Then
                         crParameterDiscreteValue1.Value = "REVISED QUOTATION / ESTIMATE"
+
+                        If Not String.IsNullOrEmpty(txtReviseNumber.Text) And Not IsNumeric(txtReviseNumber.Text) Then
+                            crParameterDiscreteValue1.Value = txtReviseNumber.Text + " REVISED QUOTATION / ESTIMATE"
+                        End If
+
                     Else
-                        crParameterDiscreteValue1.Value = "QUOTATION / ESTIMATE"
+                            crParameterDiscreteValue1.Value = "QUOTATION / ESTIMATE"
                     End If
 
                 End If
